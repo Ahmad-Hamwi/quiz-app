@@ -8,4 +8,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_welcome
+
+    override fun bindLayoutBindings(binding: FragmentWelcomeBinding) {
+        binding.apply {
+            fragmentWelcomeLayoutButtonContinue.root.setOnClickListener {
+                navController.navigate(WelcomeFragmentDirections.actionWelcomeFragmentToCharactersFragment())
+            }
+        }
+    }
 }

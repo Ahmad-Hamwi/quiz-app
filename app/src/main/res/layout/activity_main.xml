@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
+        app:applyNavBarInsetOnPadding="@{0}"
+        app:setDecorFitSystemWindow="@{true}"
         tools:context=".presentation.ui.main.MainActivity">
 
         <include

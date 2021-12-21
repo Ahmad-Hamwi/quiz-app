@@ -7,11 +7,15 @@ import com.prebunking.game.R
 import com.prebunking.game.databinding.ActivityMainBinding
 import com.prebunking.game.presentation.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
+import android.view.WindowManager
+
+import android.view.Window
+
+import android.os.Build
+
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-
-    private lateinit var mainNavController: NavController
 
     override fun getLayoutId(): Int = R.layout.activity_main
 
@@ -23,15 +27,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setupMainNavigation()
+    override fun setupTheme() {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
     }
 
-    private fun setupMainNavigation() {
-        val navHostFragment: NavHostFragment =
-            supportFragmentManager.findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment
-        mainNavController = navHostFragment.navController
-    }
+    override fun getMainNavHostFragmentId(): Int = R.id.main_nav_host_fragment
+
 }

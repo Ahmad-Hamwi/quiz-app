@@ -8,12 +8,36 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.prebunking.game.presentation.ui.welcome.WelcomeFragment"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+    </fragment>
 
 
     <fragment
         android:id="@+id/charactersFragment"
-        android:name="com.prebunking.game.presentation.ui.characters.CharactersFragment"
-        tools:layout="@layout/fragment_characters" />
+        android:name="com.prebunking.game.presentation.ui.characters.list.CharactersFragment"
+        tools:layout="@layout/fragment_characters">
+        <action
+            android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.prebunking.game.presentation.ui.characters.details.CharacterDetailsFragment"
+        tools:layout="@layout/fragment_character_details" >
+
+        <action
+            android:id="@+id/action_characterDetailsFragment_to_characterConfirmationFragment"
+            app:destination="@id/characterConfirmationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterConfirmationFragment"
+        android:name="com.prebunking.game.presentation.ui.characters.confirmation.CharacterConfirmationFragment"
+        tools:layout="@layout/fragment_character_confirmation" />
+
 
 </navigation>

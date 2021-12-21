@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -13,12 +12,12 @@
         android:background="@drawable/background">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/fragment_welcome_title"
-            android:layout_width="0dp"
+            android:id="@+id/fragment_character_confirmation_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
+            android:layout_margin="32dp"
             android:gravity="center"
-            android:text="Bonjour et bienvenu au jeu Infox Vax !"
+            android:text="Ok, c’est parti!\nVérifions l’information !"
             android:textColor="@color/white"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -26,22 +25,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/fragment_welcome_content"
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="36dp"
-            android:gravity="center"
-            android:text="Ce jeu vous permettra de découvrir plusieurs techniques couramment utilisées pour diffuser des informations fausses et trompeuses.\nEn jouant à ce jeu tu as le défi de distinguer la vérité de la désinformation.\n\nPeux-tu battre le jeu en distinguant la désinformation de la vérité ?"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:src="@drawable/ic_character_full"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_character_confirmation_continue_message"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragment_welcome_title" />
+            app:layout_constraintTop_toBottomOf="@id/fragment_character_confirmation_title" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/fragment_welcome_continue_message"
+            android:id="@+id/fragment_character_confirmation_continue_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
@@ -51,20 +45,21 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/fragment_welcome_layout_button_continue"
+            app:layout_constraintBottom_toTopOf="@id/fragment_character_confirmation_layout_button_continue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_content"
             app:layout_constraintVertical_bias="1" />
 
         <include
-            android:id="@+id/fragment_welcome_layout_button_continue"
+            android:id="@+id/fragment_character_confirmation_layout_button_continue"
             layout="@layout/layout_button_continue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
+            android:layout_margin="96dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
