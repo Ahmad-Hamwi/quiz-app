@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/background.xml" value="0.19907407407407407" />
         <entry key="app/src/main/res/drawable/background_back_button.xml" value="0.19907407407407407" />
+        <entry key="app/src/main/res/drawable/background_button_false.xml" value="3.0935620710097886" />
+        <entry key="app/src/main/res/drawable/background_button_true.xml" value="0.19444444444444445" />
+        <entry key="app/src/main/res/drawable/background_progress_bar.xml" value="0.19444444444444445" />
         <entry key="app/src/main/res/drawable/ic_active.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/drawable/toolbar_background.xml" value="0.19907407407407407" />
@@ -12,10 +15,14 @@
         <entry key="app/src/main/res/layout/fragment_character_confirmation.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_character_details.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/fragment_characters.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_choice.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_form_progress.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/layout_button_continue.xml" value="0.375" />
         <entry key="app/src/main/res/layout/layout_continue_button.xml" value="0.2824074074074074" />
+        <entry key="app/src/main/res/layout/layout_progress.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout_question.xml" value="0.165" />
         <entry key="app/src/main/res/layout/layout_toolbar.xml" value="0.1" />
       </map>
     </option>
