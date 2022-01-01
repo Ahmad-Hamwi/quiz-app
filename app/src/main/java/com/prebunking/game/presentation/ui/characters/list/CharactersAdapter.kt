@@ -24,6 +24,7 @@ class CharactersAdapter(
         override fun onBind(item: CharacterUI?, position: Int) {
             binding.apply {
                 character = item
+                excludeProfession = false
                 root.setOnClickListener { onCharacterClicked(item!!, position) }
             }
         }

@@ -7,8 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class GetScreens @Inject constructor(
+class GetScreens constructor(
     private val screenRepo: IScreenRepository
 ) : FlowUseCase<List<ScreenEntity>>() {
     override fun execute(): Flow<List<ScreenEntity>> = screenRepo.getScreens()

@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.google.android.flexbox.AlignItems
-import com.google.android.flexbox.FlexDirection
-import com.google.android.flexbox.FlexWrap
-import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.*
 import com.prebunking.game.R
 import com.prebunking.game.databinding.FragmentCharactersBinding
 import com.prebunking.game.domain.entity.ScreenEntity
@@ -49,6 +46,7 @@ class CharactersFragment : BaseFragment<FragmentCharactersBinding>() {
             flexWrap = FlexWrap.WRAP
             flexDirection = FlexDirection.ROW
             alignItems = AlignItems.STRETCH
+            justifyContent = JustifyContent.CENTER
         }
 
         val charactersAdapter: CharactersAdapter =

@@ -10,19 +10,21 @@
             type="com.prebunking.game.presentation.model.CharacterUI" />
 
         <variable
-            name="excludeDescription"
+            name="excludeProfession"
             type="Boolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="16dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/item_character_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@{character.imgProfileDrawable}"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@{character.imgProfile}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -45,15 +47,16 @@
             android:id="@+id/item_character_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ems="6"
+            android:gravity="center"
             android:text="@{character.profession}"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:existence="@{excludeDescription}"
+            app:existence="@{!excludeProfession}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_character_name"
-            tools:text="Faux Expert" />
-
+            tools:text="Faux Expert Expert Expert" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

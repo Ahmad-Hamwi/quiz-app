@@ -64,6 +64,9 @@ dependencies {
 
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
 
+    implementation("io.coil-kt:coil:1.2.0")
+    implementation("io.coil-kt:coil-svg:1.2.0")
+
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

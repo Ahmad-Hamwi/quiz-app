@@ -2,14 +2,12 @@ package com.prebunking.game.presentation.util
 
 import android.app.Activity
 import android.view.View
+import android.widget.ImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.prebunking.game.presentation.view.BaseListAdapter
 
 @BindingAdapter("visibility")
 fun visibility(view: View, visibility: Boolean) {
@@ -57,4 +55,9 @@ fun setDecorFitSystemWindow(view: View, apply: Boolean) {
     if (view.context is Activity) {
         WindowCompat.setDecorFitsSystemWindows((view.context as Activity).window, false)
     }
+}
+
+@BindingAdapter("android:src")
+fun setNetworkImage(imageView: ImageView, url: String?) {
+    imageView.loadUrl(url)
 }
