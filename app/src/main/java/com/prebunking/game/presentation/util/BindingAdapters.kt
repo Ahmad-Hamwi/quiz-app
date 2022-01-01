@@ -7,18 +7,21 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
+import com.prebunking.game.presentation.view.BaseListAdapter
 
-@BindingAdapter("app:visibility")
+@BindingAdapter("visibility")
 fun visibility(view: View, visibility: Boolean) {
     view.visibility = if (visibility) View.VISIBLE else View.INVISIBLE
 }
 
-@BindingAdapter("app:existence")
+@BindingAdapter("existence")
 fun existence(view: View, visibility: Boolean) {
     view.visibility = if (visibility) View.VISIBLE else View.GONE
 }
 
-@BindingAdapter("app:applySystemBarsInsetOnPadding")
+@BindingAdapter("applySystemBarsInsetOnPadding")
 fun applySystemBarsInsetOnPadding(view: View, addedPaddingVertical: Float) {
     ViewCompat.setOnApplyWindowInsetsListener(view) { _, windowInsets ->
         val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -30,7 +33,7 @@ fun applySystemBarsInsetOnPadding(view: View, addedPaddingVertical: Float) {
     }
 }
 
-@BindingAdapter("app:applySystemBarInsetOnPadding")
+@BindingAdapter("applySystemBarInsetOnPadding")
 fun applySystemBarInsetOnPadding(view: View, addedPaddingTop: Float) {
     ViewCompat.setOnApplyWindowInsetsListener(view) { _, windowInsets ->
         val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -39,7 +42,7 @@ fun applySystemBarInsetOnPadding(view: View, addedPaddingTop: Float) {
     }
 }
 
-@BindingAdapter("app:applyNavBarInsetOnPadding")
+@BindingAdapter("applyNavBarInsetOnPadding")
 fun applyNavBarInsetOnPadding(view: View, addedPaddingBottom: Float) {
     ViewCompat.setOnApplyWindowInsetsListener(view) { _, windowInsets ->
         val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -48,7 +51,7 @@ fun applyNavBarInsetOnPadding(view: View, addedPaddingBottom: Float) {
     }
 }
 
-@BindingAdapter("app:setDecorFitSystemWindow")
+@BindingAdapter("setDecorFitSystemWindow")
 fun setDecorFitSystemWindow(view: View, apply: Boolean) {
     if (!apply) return
     if (view.context is Activity) {

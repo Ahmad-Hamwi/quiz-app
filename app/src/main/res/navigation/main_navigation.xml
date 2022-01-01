@@ -29,6 +29,10 @@
         android:name="com.prebunking.game.presentation.ui.characters.details.CharacterDetailsFragment"
         tools:layout="@layout/fragment_character_details" >
 
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
+
         <action
             android:id="@+id/action_characterDetailsFragment_to_characterConfirmationFragment"
             app:destination="@id/characterConfirmationFragment" />

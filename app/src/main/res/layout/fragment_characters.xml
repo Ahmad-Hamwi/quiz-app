@@ -5,6 +5,13 @@
 
     <data>
 
+        <variable
+            name="charactersListScreen"
+            type="com.prebunking.game.domain.entity.ScreenEntity" />
+
+        <variable
+            name="characters"
+            type="androidx.lifecycle.LiveData&lt;java.util.List&lt;com.prebunking.game.presentation.model.CharacterUI>>" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,23 +23,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
-            android:text="Choisis un personnage!"
+            android:text="@{charactersListScreen.title}"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Choisis un personnage!" />
 
-        <include
-            android:id="@+id/fragment_characters_item_character"
-            layout="@layout/item_character"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_characters_list"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:loadData="@{characters}"
+            android:orientation="horizontal"
+            app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_character" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

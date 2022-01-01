@@ -16,7 +16,7 @@ import com.google.android.material.transition.MaterialSharedAxis
 
 abstract class BaseFragment<BINDING : ViewDataBinding> : Fragment() {
 
-    private lateinit var binding: BINDING
+    protected lateinit var binding: BINDING
 
     protected lateinit var navController: NavController
 
@@ -25,9 +25,10 @@ abstract class BaseFragment<BINDING : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return (DataBindingUtil.inflate(layoutInflater, getLayoutId(), container, false) as BINDING)
-            .apply { bindLayoutBindings(this) }
-            .root
+        binding =
+            (DataBindingUtil.inflate(layoutInflater, getLayoutId(), container, false) as BINDING)
+                .apply { bindLayoutBindings(this) }
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -12,6 +12,7 @@ import android.view.WindowManager
 import android.view.Window
 
 import android.os.Build
+import androidx.activity.viewModels
 
 
 @AndroidEntryPoint
@@ -35,5 +36,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun getMainNavHostFragmentId(): Int = R.id.main_nav_host_fragment
+
+    val viewModel: MainViewModel by viewModels()
 
 }

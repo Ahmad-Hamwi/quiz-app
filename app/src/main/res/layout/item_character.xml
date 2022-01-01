@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="character"
+            type="com.prebunking.game.presentation.model.CharacterUI" />
+
         <variable
             name="excludeDescription"
             type="Boolean" />
@@ -16,34 +22,37 @@
             android:id="@+id/item_character_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_zongo"
+            android:src="@{character.imgProfileDrawable}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_zongo" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/item_character_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zongo"
+            android:text="@{character.fullName}"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_character_img" />
+            app:layout_constraintTop_toBottomOf="@id/item_character_img"
+            tools:text="Zongo" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/item_character_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Faux Expert"
+            android:text="@{character.profession}"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:existence="@{excludeDescription}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_character_name" />
+            app:layout_constraintTop_toBottomOf="@id/item_character_name"
+            tools:text="Faux Expert" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

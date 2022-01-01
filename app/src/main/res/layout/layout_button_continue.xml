@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="buttonText"
+            type="String" />
     </data>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -16,7 +19,8 @@
         android:drawablePadding="16dp"
         android:includeFontPadding="false"
         android:paddingHorizontal="24dp"
-        android:text="@string/suivant"
+        tools:text="@string/suivant"
+        android:text="@{buttonText}"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="21sp" />
