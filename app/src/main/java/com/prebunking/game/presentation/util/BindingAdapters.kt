@@ -1,13 +1,17 @@
 package com.prebunking.game.presentation.util
 
 import android.app.Activity
+import android.graphics.Color
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.databinding.BindingAdapter
+import coil.load
+import coil.request.CachePolicy
 
 @BindingAdapter("visibility")
 fun visibility(view: View, visibility: Boolean) {
@@ -60,4 +64,10 @@ fun setDecorFitSystemWindow(view: View, apply: Boolean) {
 @BindingAdapter("android:src")
 fun setNetworkImage(imageView: ImageView, url: String?) {
     imageView.loadUrl(url)
+}
+
+@BindingAdapter("android:textColor")
+fun setHexStringAsTextColor(textView: TextView, hexColor: String?) {
+    if (hexColor == null) return
+    textView.setTextColor(Color.parseColor("#$hexColor"))
 }

@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="character"
+            type="com.prebunking.game.presentation.model.CharacterUI" />
+
+        <variable
+            name="characterConfirmationScreen"
+            type="com.prebunking.game.domain.entity.ScreenEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,22 +25,26 @@
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:gravity="center"
-            android:text="Ok, c’est parti!\nVérifions l’information !"
+            android:text="@{characterConfirmationScreen.title}"
             android:textColor="@color/white"
             android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ok, c’est parti!\nVérifions l’information !" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_character_full"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@{character.imgFull}"
             app:layout_constraintBottom_toTopOf="@+id/fragment_character_confirmation_continue_message"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragment_character_confirmation_title" />
+            app:layout_constraintTop_toBottomOf="@id/fragment_character_confirmation_title"
+            app:layout_constraintWidth_percent="0.4"
+            tools:src="@drawable/ic_character_full" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/fragment_character_confirmation_continue_message"
@@ -41,24 +53,26 @@
             android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="36dp"
             android:gravity="center"
-            android:text="Clique sur la « flèche » pour lancer le jeu."
+            android:text="@{characterConfirmationScreen.buttonMessage}"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/fragment_character_confirmation_layout_button_continue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="1" />
+            app:layout_constraintVertical_bias="1"
+            tools:text="Clique sur la « flèche » pour lancer le jeu." />
 
         <include
             android:id="@+id/fragment_character_confirmation_layout_button_continue"
             layout="@layout/layout_button_continue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="96dp"
+            android:layout_margin="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:buttonText="@{characterConfirmationScreen.buttonText}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

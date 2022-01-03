@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/characterDetailsFragment"
         android:name="com.prebunking.game.presentation.ui.characters.details.CharacterDetailsFragment"
-        tools:layout="@layout/fragment_character_details" >
+        tools:layout="@layout/fragment_character_details">
 
         <argument
             android:name="characterId"
@@ -41,7 +41,12 @@
     <fragment
         android:id="@+id/characterConfirmationFragment"
         android:name="com.prebunking.game.presentation.ui.characters.confirmation.CharacterConfirmationFragment"
-        tools:layout="@layout/fragment_character_confirmation" />
+        tools:layout="@layout/fragment_character_confirmation">
+
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
+    </fragment>
 
 
 </navigation>

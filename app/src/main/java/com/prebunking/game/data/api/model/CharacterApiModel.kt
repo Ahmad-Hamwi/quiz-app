@@ -8,7 +8,7 @@ class CharacterApiModel(
     private val code: String?,
     private val username: String?,
     private val fullName: String?,
-    private val colorHex: String?,
+    private val colorHEX: String?,
     private val profession: String?,
     private val bio: String?,
     private val characterPicture: String?,
@@ -19,7 +19,7 @@ class CharacterApiModel(
     override fun toDomain(): CharacterEntity = CharacterEntity(
         id,
         fullName,
-        colorHex,
+        colorHEX,
         profession,
         bio,
         characterPicture,
