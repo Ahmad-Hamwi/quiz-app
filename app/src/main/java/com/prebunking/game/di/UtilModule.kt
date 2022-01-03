@@ -1,9 +1,12 @@
 package com.prebunking.game.di
 
+import android.content.Context
+import android.content.SharedPreferences
 import com.prebunking.game.data.api.constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,4 +20,9 @@ class UtilModule {
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    @Provides
+    fun provideSharedPreferences(
+        @ApplicationContext context: Context
+    ): SharedPreferences = context.getSharedPreferences("app_cache", Context.MODE_PRIVATE)
 }

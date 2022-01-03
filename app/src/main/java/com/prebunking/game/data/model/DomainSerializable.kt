@@ -1,6 +1,8 @@
 package com.prebunking.game.data.model
 
-interface DomainSerializable<T> {
+import com.prebunking.game.domain.entity.Entity
+
+interface DomainSerializable<T : Entity> {
 
     fun toDomain(): T
 }

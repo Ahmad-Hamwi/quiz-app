@@ -1,6 +1,6 @@
 package com.prebunking.game.data.repository
 
-import com.prebunking.game.data.datasource.IScreenRemoteDataSource
+import com.prebunking.game.data.datasource.remote.IScreenRemoteDataSource
 import com.prebunking.game.domain.entity.ScreenEntity
 import com.prebunking.game.domain.gateway.repository.IScreenRepository
 import kotlinx.coroutines.flow.Flow

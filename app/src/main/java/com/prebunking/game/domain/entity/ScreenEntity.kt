@@ -6,7 +6,7 @@ open class ScreenEntity(
     val content: String?,
     val buttonMessage: String?,
     val buttonText: String?,
-) {
+) : Entity() {
     companion object {
         val WELCOME_SCREEN = 1
         val CHARACTER_LIST_SCREEN = 2

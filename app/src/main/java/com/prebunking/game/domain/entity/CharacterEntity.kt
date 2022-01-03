@@ -1,6 +1,6 @@
 package com.prebunking.game.domain.entity
 
-class CharacterEntity(
+class CharacterEntity (
     val id: Int?,
     val fullName: String?,
     val color: String?,
@@ -8,4 +8,4 @@ class CharacterEntity(
     val bio: String?,
     val imgFull: String?,
     val imgProfile: String?,
-)
+) : Entity()

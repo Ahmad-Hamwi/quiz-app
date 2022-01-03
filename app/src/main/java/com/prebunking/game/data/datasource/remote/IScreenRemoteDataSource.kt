@@ -1,4 +1,4 @@
-package com.prebunking.game.data.datasource
+package com.prebunking.game.data.datasource.remote
 
 import com.prebunking.game.data.api.IScreenApi
 import com.prebunking.game.data.api.exception.ServerException
