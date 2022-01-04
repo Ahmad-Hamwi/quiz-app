@@ -9,7 +9,9 @@ import com.prebunking.game.R
 import com.prebunking.game.databinding.FragmentFormProgressBinding
 import com.prebunking.game.presentation.ui.base.BaseFragment
 import com.prebunking.game.presentation.ui.main.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FormProgressFragment : BaseFragment<FragmentFormProgressBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_form_progress
 

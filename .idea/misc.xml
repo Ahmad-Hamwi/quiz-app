@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/layout/item_character.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/layout_button_continue.xml" value="0.375" />
         <entry key="app/src/main/res/layout/layout_continue_button.xml" value="0.2824074074074074" />
+        <entry key="app/src/main/res/layout/layout_loading.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/layout/layout_progress.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_question.xml" value="0.335" />
         <entry key="app/src/main/res/layout/layout_toolbar.xml" value="0.1" />

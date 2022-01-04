@@ -5,31 +5,44 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.prebunking.game.presentation.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
         android:background="@drawable/background"
-        app:applyNavBarInsetOnPadding="@{0}"
-        app:setDecorFitSystemWindow="@{true}"
         tools:context=".presentation.ui.main.MainActivity">
 
-        <include
-            android:id="@+id/layout_toolbar"
-            layout="@layout/layout_toolbar" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            app:applyNavBarInsetOnPadding="@{0}"
+            app:setDecorFitSystemWindow="@{true}"
+            android:layout_height="match_parent">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/main_nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
-            app:navGraph="@navigation/main_navigation" />
+            <include
+                android:id="@+id/layout_toolbar"
+                layout="@layout/layout_toolbar" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/main_nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+                app:navGraph="@navigation/main_navigation" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            layout="@layout/layout_loading"
+            app:existence="@{viewModel.mainLoading}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

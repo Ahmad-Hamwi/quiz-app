@@ -14,13 +14,14 @@ abstract class BaseActivity<BINDING : ViewDataBinding> : AppCompatActivity() {
 
     private lateinit var binding: BINDING
 
-    private var mainNavController: NavController? = null
+    protected var mainNavController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupTheme()
         setContentLayoutWithBinding()
         setupMainNavigation()
+        observeNavigation()
     }
 
     private fun setContentLayoutWithBinding() {
@@ -44,6 +45,8 @@ abstract class BaseActivity<BINDING : ViewDataBinding> : AppCompatActivity() {
             supportFragmentManager.findFragmentById(getMainNavHostFragmentId()) as NavHostFragment
         mainNavController = navHostFragment.navController
     }
+
+    protected open fun observeNavigation() {}
 
     @IdRes
     open fun getMainNavHostFragmentId(): Int = -1

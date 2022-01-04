@@ -4,7 +4,7 @@ class PostEntity(
     val id: String,
     val characterId: Int,
     val post: String,
-    val postPicture: String,
+    val postPicture: String?,
     val confirmationQuestion: String,
     val btnTrue: String,
     val btnFalse: String,

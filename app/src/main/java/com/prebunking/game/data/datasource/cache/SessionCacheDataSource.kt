@@ -1,6 +1,8 @@
 package com.prebunking.game.data.datasource.cache
 
 import android.content.SharedPreferences
+import javax.inject.Inject
+import javax.inject.Singleton
 
 interface ISessionCacheDataSource {
     fun cacheId(id: String)
@@ -8,7 +10,8 @@ interface ISessionCacheDataSource {
     fun getId(): String?
 }
 
-class SessionCacheDataSourceImpl(
+@Singleton
+class SessionCacheDataSourceImpl @Inject constructor(
     private val sharedPreferences: SharedPreferences
 ) : ISessionCacheDataSource {
     override fun cacheId(id: String) {

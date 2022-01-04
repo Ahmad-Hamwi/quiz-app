@@ -9,7 +9,7 @@ class PostApiModel(
     private val id: String,
     private val characterId: Int,
     private val post: String,
-    private val postPicture: String,
+    private val postPicture: String?,
     private val confirmationQuestion: String,
     private val btnTrue: String,
     private val btnFalse: String,
@@ -21,7 +21,7 @@ class PostApiModel(
     private val commentsCount: Int,
     private val retweetCount: Int,
     private val likesCount: String,
-    private val typeEntity: String
+    private val type: String
 ) : DomainSerializable<PostEntity> {
     override fun toDomain(): PostEntity = PostEntity(
         id,
@@ -39,7 +39,7 @@ class PostApiModel(
         commentsCount,
         retweetCount,
         likesCount,
-        PostTypeEntity.valueOf(typeEntity)
+        PostTypeEntity.valueOf(type.uppercase())
     )
 
 }

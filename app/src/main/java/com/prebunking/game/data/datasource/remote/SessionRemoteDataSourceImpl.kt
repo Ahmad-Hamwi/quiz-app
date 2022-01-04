@@ -25,7 +25,7 @@ class SessionRemoteDataSourceImpl @Inject constructor(
             CreateSessionBody(guestId, characterId)
         )
         if (response.isSuccessful) {
-            emit(response.body()!!.data!!)
+            emit(response.body()!!)
         } else {
             if (response.code() == 500) throw ServerException()
             else throw NotImplementedError()

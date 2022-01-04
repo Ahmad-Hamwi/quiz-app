@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.prebunking.game.R
@@ -41,19 +42,24 @@ class CharacterConfirmationFragment : BaseFragment<FragmentCharacterConfirmation
                 .first { it.id == navArgs.characterId }
                 .apply { binding.character = this }
         }
+
+        mainViewModel.sessionCreated.observe(viewLifecycleOwner) { isSessionCreated ->
+            if (isSessionCreated) navigateToFormFragment()
+        }
     }
 
     override fun bindLayoutBindings(binding: FragmentCharacterConfirmationBinding) {
         binding.apply {
             fragmentCharacterConfirmationLayoutButtonContinue.root.setOnClickListener {
-                navigateToFormFragment()
+                mainViewModel.createSession(navArgs.characterId)
             }
         }
     }
 
     private fun navigateToFormFragment() {
-        CharacterConfirmationFragmentDirections.actionCharacterConfirmationFragmentToFormProgressFragment(
-            navArgs.characterId
+        navController.navigate(
+            CharacterConfirmationFragmentDirections
+                .actionCharacterConfirmationFragmentToFormProgressFragment(navArgs.characterId)
         )
     }
 }
