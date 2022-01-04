@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/background_button_false.xml" value="3.0935620710097886" />
         <entry key="app/src/main/res/drawable/background_button_true.xml" value="0.19444444444444445" />
         <entry key="app/src/main/res/drawable/background_progress_bar.xml" value="0.19444444444444445" />
+        <entry key="app/src/main/res/drawable/background_twitter.xml" value="0.17777777777777778" />
         <entry key="app/src/main/res/drawable/ic_active.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/drawable/toolbar_background.xml" value="0.19907407407407407" />
@@ -18,13 +19,16 @@
         <entry key="app/src/main/res/layout/fragment_choice.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_finish.xml" value="0.22242359370680445" />
         <entry key="app/src/main/res/layout/fragment_form_progress.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_post.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_twitter.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/layout_button_continue.xml" value="0.375" />
         <entry key="app/src/main/res/layout/layout_continue_button.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/layout/layout_progress.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/layout_question.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/layout_question.xml" value="0.335" />
         <entry key="app/src/main/res/layout/layout_toolbar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_twitter.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/zigzag_vertical_list.xml" value="0.3098958333333333" />
       </map>
     </option>

@@ -42,4 +42,18 @@ class CharacterConfirmationFragment : BaseFragment<FragmentCharacterConfirmation
                 .apply { binding.character = this }
         }
     }
+
+    override fun bindLayoutBindings(binding: FragmentCharacterConfirmationBinding) {
+        binding.apply {
+            fragmentCharacterConfirmationLayoutButtonContinue.root.setOnClickListener {
+                navigateToFormFragment()
+            }
+        }
+    }
+
+    private fun navigateToFormFragment() {
+        CharacterConfirmationFragmentDirections.actionCharacterConfirmationFragmentToFormProgressFragment(
+            navArgs.characterId
+        )
+    }
 }

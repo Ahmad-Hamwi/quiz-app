@@ -46,6 +46,19 @@
         <argument
             android:name="characterId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_characterConfirmationFragment_to_formProgressFragment"
+            app:destination="@id/formProgressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/formProgressFragment"
+        android:name="com.prebunking.game.presentation.ui.progress.FormProgressFragment"
+        tools:layout="@layout/fragment_form_progress">
+
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
     </fragment>
 
 
