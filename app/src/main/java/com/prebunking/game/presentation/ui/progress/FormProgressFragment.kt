@@ -60,7 +60,7 @@ class FormProgressFragment : BaseFragment<FragmentFormProgressBinding>() {
         FormProgressPagerAdapter(
             childFragmentManager,
             lifecycle,
-            mainViewModel.sessionCreated.value!!.posts
+            mainViewModel.sessionCreated.value!!.posts,
         ) { isCorrect, post ->
             mainViewModel.postToSession(post.id, isCorrect)
             showDialogs(isCorrect, post)

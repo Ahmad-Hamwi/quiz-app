@@ -4,6 +4,7 @@ import android.view.View
 import com.prebunking.game.R
 import com.prebunking.game.databinding.FragmentTwitterBinding
 import com.prebunking.game.domain.entity.PostEntity
+import com.prebunking.game.presentation.model.CharacterUI
 import com.prebunking.game.presentation.ui.base.BaseFragment
 
 class TwitterFragment(
