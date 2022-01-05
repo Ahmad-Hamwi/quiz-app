@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="screen"
+            type="com.prebunking.game.domain.entity.ScreenEntity" />
+
+        <variable
+            name="post"
+            type="com.prebunking.game.domain.entity.PostEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="11dp"
+        app:cardElevation="24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dialog_correct_answer_layout_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:background="@drawable/background_rounded_corners"
+                android:clipToPadding="false"
+                android:elevation="24dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dialog_correct_answer_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_rounded_corners"
+                    android:elevation="12dp"
+                    android:src="@drawable/ic_wrong"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp"
+                    android:text="@{post.wrongAnswerText}"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/dialog_correct_answer_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Mauvaise réponse." />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dialog_correct_answer_badge_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/background_rounded_corners"
+                android:src="@drawable/ic_badge"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp"
+                app:contentPadding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dialog_correct_answer_layout_correct"
+                app:strokeColor="@color/colorGrey"
+                app:strokeWidth="1dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Les ex-associés (pour certains d'entre eux) ont participé à la violence et peuvent développer des attitudes violentes. Mais les autres regrettent d’avoir choisi la mauvaise voie et demande d’être pardonné pour commencer un nouveau départ. Le programme DDR a justement pour mission d'organiser, d'encadrer et de gérer le désarmement, la démobilisation et la réintégration des ex-associés Boko Haram désireux de répondre favorablement à l'offre de paix du Chef de l'État."
+                    android:textColor="@color/colorTrue" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dialog_correct_answer_text_before_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:text="@{post.correctAnswerText}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dialog_correct_answer_badge_icon"
+                tools:text="Clique sur la « flèche » pour continuer." />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialog_correct_answer_continue"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/background_back_button"
+                android:rotationY="180"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dialog_correct_answer_text_before_button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
