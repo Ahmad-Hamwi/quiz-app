@@ -44,7 +44,7 @@ class CharacterConfirmationFragment : BaseFragment<FragmentCharacterConfirmation
         }
 
         mainViewModel.sessionCreated.observe(viewLifecycleOwner) { isSessionCreated ->
-            if (isSessionCreated) navigateToFormFragment()
+            if (isSessionCreated != null) navigateToFormFragment()
         }
     }
 

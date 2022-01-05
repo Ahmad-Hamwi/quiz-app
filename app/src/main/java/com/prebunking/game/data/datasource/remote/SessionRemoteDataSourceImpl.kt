@@ -13,7 +13,7 @@ import javax.inject.Singleton
 interface ISessionRemoteDataSource {
     fun createSession(guestId: String, characterId: Int): Flow<SessionApiModel>
 
-    fun postSession(postId: String, isCorrect: Boolean): Flow<Boolean>
+    fun postSession(sessionId: String, postId: String, isCorrect: Boolean): Flow<Boolean>
 }
 
 @Singleton
@@ -32,14 +32,16 @@ class SessionRemoteDataSourceImpl @Inject constructor(
         }
     }
 
-    override fun postSession(postId: String, isCorrect: Boolean): Flow<Boolean> = flow {
-        val response = sessionsApi.postSession(PostSessionBody(postId, isCorrect))
-        if (response.isSuccessful) {
-            emit(true)
-        } else {
-            if (response.code() == 500) throw ServerException()
-            else throw NotImplementedError()
+    override fun postSession(sessionId: String, postId: String, isCorrect: Boolean): Flow<Boolean> =
+        flow {
+            val response =
+                sessionsApi.postSession(PostSessionBody(sessionId, postId, if (isCorrect) 1 else 0))
+            if (response.isSuccessful) {
+                emit(true)
+            } else {
+                if (response.code() == 500) throw ServerException()
+                else throw NotImplementedError()
+            }
         }
-    }
 
 }

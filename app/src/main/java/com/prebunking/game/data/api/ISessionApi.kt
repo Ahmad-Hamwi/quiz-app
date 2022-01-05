@@ -2,7 +2,6 @@ package com.prebunking.game.data.api
 
 import com.prebunking.game.data.api.constants.SESSIONS
 import com.prebunking.game.data.api.constants.SESSIONS_POST
-import com.prebunking.game.data.api.model.RemoteResponse
 import com.prebunking.game.data.api.model.SessionApiModel
 import com.prebunking.game.data.api.requests.CreateSessionBody
 import com.prebunking.game.data.api.requests.PostSessionBody
@@ -15,5 +14,5 @@ interface ISessionApi {
     suspend fun createSession(@Body body: CreateSessionBody): Response<SessionApiModel>
 
     @POST(SESSIONS_POST)
-    suspend fun postSession(@Body body: PostSessionBody): RemoteResponse<Nothing>
+    suspend fun postSession(@Body body: PostSessionBody): Response<SessionApiModel>
 }

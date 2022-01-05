@@ -2,10 +2,12 @@ package com.prebunking.game.presentation.ui.main
 
 import androidx.lifecycle.*
 import com.prebunking.game.domain.entity.ScreenEntity
+import com.prebunking.game.domain.entity.SessionEntity
 import com.prebunking.game.domain.interactor.character.GetCharacters
 import com.prebunking.game.domain.interactor.guest.CreateGuest
 import com.prebunking.game.domain.interactor.screen.GetScreens
 import com.prebunking.game.domain.interactor.session.CreateSession
+import com.prebunking.game.domain.interactor.session.PostSession
 import com.prebunking.game.presentation.model.CharacterUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
@@ -18,7 +20,8 @@ class MainViewModel @Inject constructor(
     private val createGuest: CreateGuest,
     private val getScreens: GetScreens,
     private val getCharacters: GetCharacters,
-    private val createSession: CreateSession
+    private val createSession: CreateSession,
+    private val postToSession: PostSession
 ) : ViewModel() {
 
     init {
@@ -56,18 +59,24 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    public val sessionCreated: MutableLiveData<Boolean> = MutableLiveData()
+    public val sessionCreated: MutableLiveData<SessionEntity> = MutableLiveData()
 
     public fun createSession(characterId: Int) {
         viewModelScope.launch {
-            mainLoading.value = true
+            sessionCreated.value = createSession.execute(characterId)
+                .onStart { mainLoading.value = true }
+                .catch { it.printStackTrace() }
+                .single()
+            mainLoading.value = false
+        }
+    }
+
+    public fun postToSession(postId: String, isCorrect: Boolean) {
+        viewModelScope.launch {
             try {
-                createSession.execute(characterId)
-                sessionCreated.value = true
+                postToSession.execute(PostSession.PostSessionParams(postId, isCorrect))
             } catch (exception: Exception) {
                 exception.printStackTrace()
-            } finally {
-                mainLoading.value = false
             }
         }
     }

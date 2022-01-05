@@ -21,7 +21,11 @@ class SessionRepositoryImpl @Inject constructor(
             .onEach { cacheDataSource.cacheId(it.id) }
             .map { it.toDomain() }
 
-    override fun post(params: PostSession.Params) =
-        remoteDataSource.postSession(params.postId, params.isCorrect)
+    override fun post(postSessionParams: PostSession.PostSessionParams) =
+        remoteDataSource.postSession(
+            cacheDataSource.getId()!!,
+            postSessionParams.postId,
+            postSessionParams.isCorrect
+        )
 
 }

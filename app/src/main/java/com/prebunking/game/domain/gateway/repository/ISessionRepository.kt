@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.Flow
 interface ISessionRepository {
     fun create(guestId: String, characterId: Int): Flow<SessionEntity>
 
-    fun post(params: PostSession.Params): Flow<Boolean>
+    fun post(postSessionParams: PostSession.PostSessionParams): Flow<Boolean>
 }

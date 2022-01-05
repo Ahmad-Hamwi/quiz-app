@@ -1,7 +1,7 @@
 package com.prebunking.game.domain.entity
 
 class SessionEntity(
-    private val id: String,
-    private val posts: List<PostEntity>,
-    private val badges: List<BadgeEntity>
+    val id: String,
+    val posts: List<PostEntity>,
+    val badges: List<BadgeEntity>
 ) : Entity()

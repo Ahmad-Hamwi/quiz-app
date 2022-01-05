@@ -38,7 +38,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun observeNavigation() {
         mainNavController?.addOnDestinationChangedListener { controller, destination, arguments ->
             if (isDestinationBeforeSession(destination)) {
-                viewModel.sessionCreated.value = false
+                viewModel.sessionCreated.value = null
             }
         }
     }

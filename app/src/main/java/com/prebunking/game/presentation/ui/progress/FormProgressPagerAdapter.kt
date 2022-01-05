@@ -10,7 +10,8 @@ import com.prebunking.game.presentation.ui.progress.post.TwitterFragment
 class FormProgressPagerAdapter(
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle,
-    private val posts: List<PostEntity>
+    private val posts: List<PostEntity>,
+    private val answerCallback: (isCorrect: Boolean, post: PostEntity) -> Unit
 ) : FragmentStateAdapter(
     fragmentManager,
     lifecycle
@@ -18,5 +19,8 @@ class FormProgressPagerAdapter(
 
     override fun getItemCount(): Int = posts.size
 
-    override fun createFragment(position: Int): Fragment = TwitterFragment(posts[position])
+    override fun createFragment(position: Int): Fragment =
+        TwitterFragment(posts[position]) { isCorrect ->
+            answerCallback(isCorrect, posts[position])
+        }
 }

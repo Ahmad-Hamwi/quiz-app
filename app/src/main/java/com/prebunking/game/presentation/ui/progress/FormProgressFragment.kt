@@ -16,7 +16,9 @@ class FormProgressFragment : BaseFragment<FragmentFormProgressBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_form_progress
 
     override fun bindLayoutBindings(binding: FragmentFormProgressBinding) {
+        binding.apply {
 
+        }
     }
 
     override fun onCreateView(
@@ -33,8 +35,18 @@ class FormProgressFragment : BaseFragment<FragmentFormProgressBinding>() {
 
     private val mainViewModel: MainViewModel by activityViewModels()
 
+    private lateinit var pagerAdapter: FormProgressPagerAdapter
+
     private fun initPager() {
-//        binding.fragmentFormProgressPager.adapter =
-//            FormProgressPagerAdapter(childFragmentManager, lifecycle)
+        FormProgressPagerAdapter(
+            childFragmentManager,
+            lifecycle,
+            mainViewModel.sessionCreated.value!!.posts
+        ) { isCorrect, post ->
+            mainViewModel.postToSession(post.id, isCorrect)
+        }.apply {
+            binding.fragmentFormProgressPager.adapter = this
+            pagerAdapter = this
+        }
     }
 }
