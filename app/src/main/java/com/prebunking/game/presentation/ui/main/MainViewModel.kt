@@ -37,23 +37,20 @@ class MainViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
+            screensLoading.value = true
             screens.value = getScreens.execute()
-                .onStart { screensLoading.value = true }
-                .onCompletion { screensLoading.value = false }
-                .catch { screensLoading.value = false }
+                .catch { it.printStackTrace() }
                 .single()
+            screensLoading.value = false
         }
     }
 
     public val characters: MutableLiveData<List<CharacterUI>> = MutableLiveData()
-    public val charactersLoading: MutableLiveData<Boolean> = MutableLiveData()
 
     init {
         viewModelScope.launch {
             characters.value = getCharacters.execute()
-                .onStart { charactersLoading.value = true }
-                .onCompletion { charactersLoading.value = false }
-                .catch { charactersLoading.value = false }
+                .catch { it.printStackTrace() }
                 .single()
                 .map { CharacterUI.fromDomain(it) }
         }

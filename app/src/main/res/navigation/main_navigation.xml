@@ -59,7 +59,19 @@
         <argument
             android:name="characterId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_formProgressFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.prebunking.game.presentation.ui.finish.FinishFragment"
+        tools:layout="@layout/fragment_finish">
+
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>
