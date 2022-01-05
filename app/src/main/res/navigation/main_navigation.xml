@@ -72,6 +72,23 @@
         <argument
             android:name="characterId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_finishFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_finishFragment_to_thankYouFragment"
+            app:destination="@id/thankYouFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thankYouFragment"
+        android:name="com.prebunking.game.presentation.ui.thankyou.ThankYouFragment"
+        tools:layout="@layout/fragment_thank_you">
+        <action
+            android:id="@+id/action_thankYouFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
     </fragment>
 
 </navigation>

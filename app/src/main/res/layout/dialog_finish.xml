@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="screen"
+            type="com.prebunking.game.domain.entity.ScreenEntity" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorTrue"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:cardCornerRadius="11dp"
+            app:cardElevation="24dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dialog_finish_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginVertical="36dp"
+                    android:gravity="center"
+                    android:text="@{screen.content}"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Joue avec un nouveau personnage et découvre de nouveaux types de désinformation." />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/dialog_finish_layout_buttons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="58dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dialog_finish_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/dialog_finish_replay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_rounded_corners_solid"
+                        android:backgroundTint="@color/colorGreenLight"
+                        android:gravity="center"
+                        android:minWidth="112dp"
+                        android:paddingVertical="12dp"
+                        android:elevation="4dp"
+                        android:text="@{screen.buttonMessage}"
+                        android:textColor="@color/colorTrue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Rejouer" />
+
+                    <Space
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/dialog_finish_quit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_rounded_corners_stroke"
+                        android:backgroundTint="@color/colorGreenLight"
+                        android:gravity="center"
+                        android:minWidth="112dp"
+                        android:paddingVertical="12dp"
+                        android:text="@{screen.buttonText}"
+                        android:textColor="@color/colorGreenLight"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Quitter" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="58dp"
+                    android:background="@color/colorGreenLight"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dialog_finish_layout_buttons"
+                    app:layout_constraintVertical_bias="1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</layout>

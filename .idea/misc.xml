@@ -10,12 +10,16 @@
         <entry key="app/src/main/res/drawable/background_dialog_correct_answer.xml" value="0.3138888888888889" />
         <entry key="app/src/main/res/drawable/background_progress_bar.xml" value="0.19444444444444445" />
         <entry key="app/src/main/res/drawable/background_rounded_corners.xml" value="0.3138888888888889" />
+        <entry key="app/src/main/res/drawable/background_rounded_corners_solid.xml" value="0.3138888888888889" />
+        <entry key="app/src/main/res/drawable/background_rounded_corners_stroke.xml" value="0.3138888888888889" />
+        <entry key="app/src/main/res/drawable/background_thankyou.xml" value="0.3138888888888889" />
         <entry key="app/src/main/res/drawable/background_twitter.xml" value="0.17777777777777778" />
         <entry key="app/src/main/res/drawable/ic_active.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/drawable/toolbar_background.xml" value="0.19907407407407407" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/dialog_correct_answer.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/dialog_finish.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/dialog_wrong_answer.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_character_confirmation.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_character_details.xml" value="0.146875" />
@@ -25,6 +29,7 @@
         <entry key="app/src/main/res/layout/fragment_finish.xml" value="0.22242359370680445" />
         <entry key="app/src/main/res/layout/fragment_form_progress.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_post.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_thank_you.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_twitter.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.2953125" />

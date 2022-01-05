@@ -48,4 +48,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 destination.id == R.id.charactersFragment ||
                 destination.id == R.id.characterDetailsFragment ||
                 destination.id == R.id.characterConfirmationFragment
+
+    override fun onBackPressed() {
+        if (mainNavController?.currentDestination?.id == R.id.thankYouFragment) {
+            finish()
+        } else {
+            super.onBackPressed()
+        }
+    }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="screen"
+            type="com.prebunking.game.domain.entity.ScreenEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_thank_you_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="88dp"
+            android:background="@drawable/background_thankyou"
+            android:gravity="center"
+            android:paddingHorizontal="48dp"
+            android:paddingVertical="88dp"
+            android:text="@{screen.content}"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Merci d'avoir joué ! Nous espérons te revoir bientôt." />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fragment_thank_you_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="64dp"
+            android:background="@color/colorTransparent"
+            android:padding="16dp"
+            android:text="@{screen.buttonText}"
+            android:textAllCaps="false"
+            android:textColor="@color/colorGreenLight"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_thank_you_content"
+            tools:text="Retour à la page d'accueil." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

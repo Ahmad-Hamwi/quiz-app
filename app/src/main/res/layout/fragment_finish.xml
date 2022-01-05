@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="character"
+            type="com.prebunking.game.presentation.model.CharacterUI" />
+
+        <variable
+            name="screen"
+            type="com.prebunking.game.domain.entity.ScreenEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,14 +21,14 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/fragment_finish_message"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
+            android:layout_marginHorizontal="12dp"
             android:layout_marginVertical="24dp"
             android:gravity="center"
             android:text="Le Tour finit ici …\nLe Jeu avec ce personnage est terminé! "
             android:textColor="@color/white"
-            android:textSize="32sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,32 +45,33 @@
             app:layout_constraintTop_toBottomOf="@id/fragment_finish_message">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
-
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingVertical="16dp"
-                    android:text="Zongo"
+                    android:text="@{character.fullName}"
                     android:textColor="@color/white"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Zongo" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_character_full" />
+                    android:layout_height="224dp"
+                    android:src="@{character.imgFull}"
+                    tools:src="@drawable/ic_character_full" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -77,10 +86,6 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_character_full" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -92,14 +97,15 @@
             android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="12dp"
             android:gravity="center"
-            android:text="Clique sur la « flèche » pour lancer le jeu."
+            android:text="@{screen.buttonMessage}"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/fragment_finish_layout_button_continue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="1" />
+            app:layout_constraintVertical_bias="1"
+            tools:text="Clique sur la « flèche » pour lancer le jeu." />
 
         <include
             android:id="@+id/fragment_finish_layout_button_continue"
@@ -107,6 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
+            app:buttonText="@{`Suivant`}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
