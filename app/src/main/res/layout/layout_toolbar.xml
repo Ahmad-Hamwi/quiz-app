@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/background_toolbar"
         android:paddingHorizontal="25dp"
-        android:paddingVertical="20dp"
-        app:applySystemBarInsetOnPadding="@{@dimen/padding_toolbar_top}">
+        android:paddingTop="40dp"
+        android:paddingBottom="20dp">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/toolbar_button_back"
