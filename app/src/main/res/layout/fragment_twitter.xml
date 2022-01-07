@@ -14,172 +14,179 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:background="@drawable/background_twitter"
-            android:elevation="16dp"
-            android:minHeight="200dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/fragment_twitter_layout_question"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/layout_twitter_profile_image"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="16dp"
-                android:src="@{post.character.imgProfile}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/layout_twitter_profile_name"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:text="@{post.character.fullName}"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/layout_twitter_profile_image"
-                app:layout_constraintStart_toEndOf="@id/layout_twitter_profile_image"
-                app:layout_constraintTop_toTopOf="@id/layout_twitter_profile_image"
-                tools:text="Nana" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/layout_twitter_profile_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:text="@{`@` + post.character.fullName + ` 6h`}"
-                android:textColor="@color/colorGrey2"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@id/layout_twitter_profile_image"
-                app:layout_constraintStart_toEndOf="@id/layout_twitter_profile_name"
-                app:layout_constraintTop_toTopOf="@id/layout_twitter_profile_image"
-                tools:text="Nana 6h" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/fragment_twitter_options"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:src="@drawable/ic_options"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/fragment_twitter_post"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="18dp"
-                android:text="@{post.post}"
-                android:textColor="@color/black"
-                android:textSize="23sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layout_twitter_profile_image"
-                tools:text="Si l’État Islamique s’installe, alors il y aura du travail pour tout le monde." />
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingVertical="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/fragment_twitter_post"
-                app:layout_constraintStart_toStartOf="@+id/fragment_twitter_post"
-                app:layout_constraintTop_toBottomOf="@id/fragment_twitter_post">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="start|center_vertical"
-                        android:orientation="horizontal">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_twitter_comments" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="@{String.valueOf(post.commentsCount)}"
-                            android:textSize="16sp"
-                            tools:text="232" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_twitter_retweet" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="@{String.valueOf(post.retweetCount)}"
-                            android:textSize="16sp"
-                            tools:text="232" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="end|center_vertical"
-                        android:orientation="horizontal">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_twitter_likes" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="@{post.likesCount + `k`}"
-                            android:textSize="16sp"
-                            tools:text="232k" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <Space
-                    android:layout_width="32dp"
-                    android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="12dp"
+                android:background="@drawable/background_twitter">
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/layout_twitter_profile_image"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_margin="16dp"
+                    android:src="@{post.character.imgProfile}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/layout_twitter_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="@{post.character.fullName}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_twitter_profile_image"
+                    app:layout_constraintStart_toEndOf="@id/layout_twitter_profile_image"
+                    app:layout_constraintTop_toTopOf="@id/layout_twitter_profile_image"
+                    tools:text="Nana" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/layout_twitter_profile_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="@{`@` + post.character.fullName + ` 6h`}"
+                    android:textColor="@color/colorGrey2"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_twitter_profile_image"
+                    app:layout_constraintStart_toEndOf="@id/layout_twitter_profile_name"
+                    app:layout_constraintTop_toTopOf="@id/layout_twitter_profile_image"
+                    tools:text="Nana 6h" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fragment_twitter_options"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_weight="0"
-                    android:src="@drawable/ic_twitter_share" />
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_options"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fragment_twitter_post"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@{post.post+post.post+post.post}"
+                    android:textColor="@color/black"
+                    android:textSize="23sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_twitter_profile_image"
+                    tools:text="Si l’État Islamique s’installe, alors il y aura du travail pour tout le monde." />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="18dp"
+                    app:layout_constraintEnd_toEndOf="@+id/fragment_twitter_post"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_twitter_post"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_twitter_post">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_twitter_comments" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@{String.valueOf(post.commentsCount)}"
+                                android:textSize="16sp"
+                                tools:text="232" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_twitter_retweet" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@{String.valueOf(post.retweetCount)}"
+                                android:textSize="16sp"
+                                tools:text="232" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end|center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_twitter_likes" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="@{post.likesCount + `k`}"
+                                android:textSize="16sp"
+                                tools:text="232k" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <Space
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="0"
+                        android:src="@drawable/ic_twitter_share" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
 
         <include
             android:id="@+id/fragment_twitter_layout_question"
