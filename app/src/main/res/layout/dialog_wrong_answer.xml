@@ -78,7 +78,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:background="@drawable/background_rounded_corners_solid"
-                    android:minHeight="187dp"
                     android:src="@drawable/ic_badge"
                     app:cardCornerRadius="6dp"
                     app:cardElevation="0dp"
@@ -94,8 +93,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:maxHeight="187dp"
+                        android:minHeight="187dp"
+                        android:scrollbars="vertical"
                         android:text="@{post.wrongAnswerText}"
                         android:textColor="@color/colorTrue"
+                        app:scrollable="@{true}"
                         tools:text="Les ex-associés (pour certains d'entre eux) ont participé à la violence et peuvent développer des attitudes violentes. Mais les autres regrettent d’avoir choisi la mauvaise voie et demande d’être pardonné pour commencer un nouveau départ. Le programme DDR a justement pour mission d'organiser, d'encadrer et de gérer le désarmement, la démobilisation et la réintégration des ex-associés Boko Haram désireux de répondre favorablement à l'offre de paix du Chef de l'État." />
                 </com.google.android.material.card.MaterialCardView>
 
