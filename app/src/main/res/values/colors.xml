@@ -9,9 +9,13 @@
     <color name="black_50">#80000000</color>
     <color name="colorGrey">#8A8A8A</color>
     <color name="colorGrey2">#696969</color>
+    <color name="colorGrey3">#888888</color>
+    <color name="colorGrey4">#C4C4C4</color>
+    <color name="colorGrey5">#4E4E4E</color>
     <color name="colorTrue">#007A5E</color>
     <color name="colorFalse">#C8102E</color>
     <color name="colorGreenLight">#29F095</color>
+    <color name="colorBlue">#4A67DE</color>
     <color name="colorTransparent">#00FFFFFF</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
