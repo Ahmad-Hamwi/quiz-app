@@ -31,6 +31,7 @@ class CorrectAnswerDialog(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        isCancelable = false
         setStyle(STYLE_NORMAL, R.style.dialog_style)
     }
 }
