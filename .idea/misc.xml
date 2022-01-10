@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/drawable/background_rounded_corners_stroke.xml" value="0.3138888888888889" />
         <entry key="app/src/main/res/drawable/background_thankyou.xml" value="0.3138888888888889" />
         <entry key="app/src/main/res/drawable/background_twitter.xml" value="0.17777777777777778" />
+        <entry key="app/src/main/res/drawable/background_whatsapp_message_bottom.xml" value="0.3101851851851852" />
         <entry key="app/src/main/res/drawable/ic_active.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/drawable/toolbar_background.xml" value="0.19907407407407407" />
@@ -34,6 +35,7 @@
         <entry key="app/src/main/res/layout/fragment_thank_you.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_twitter.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_whatsapp.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/layout_button_continue.xml" value="0.375" />
         <entry key="app/src/main/res/layout/layout_continue_button.xml" value="0.2824074074074074" />

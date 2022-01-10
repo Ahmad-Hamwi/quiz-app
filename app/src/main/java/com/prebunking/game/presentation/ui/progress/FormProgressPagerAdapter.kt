@@ -8,6 +8,7 @@ import com.prebunking.game.domain.entity.PostEntity
 import com.prebunking.game.domain.entity.PostTypeEntity
 import com.prebunking.game.presentation.ui.progress.post.FacebookFragment
 import com.prebunking.game.presentation.ui.progress.post.TwitterFragment
+import com.prebunking.game.presentation.ui.progress.post.WhatsappFragment
 
 class FormProgressPagerAdapter(
     fragmentManager: FragmentManager,
@@ -28,8 +29,10 @@ class FormProgressPagerAdapter(
         }
         return if (post.typeEntity == PostTypeEntity.FACEBOOK) {
             FacebookFragment(post, answerCallback)
-        } else {
+        } else if (post.typeEntity == PostTypeEntity.TWITTER) {
             TwitterFragment(post, answerCallback)
+        } else {
+            WhatsappFragment(post, answerCallback)
         }
     }
 }
