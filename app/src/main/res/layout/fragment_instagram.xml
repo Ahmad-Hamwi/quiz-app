@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.prebunking.game.domain.entity.PostEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/white"
+            android:minHeight="200dp"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_instagram_layout_question"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:elevation="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/layout_instagram_profile_image"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="16dp"
+                android:src="@{post.character.imgProfile}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/layout_instagram_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:includeFontPadding="false"
+                android:text="@{post.character.fullName}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/layout_instagram_profile_image"
+                app:layout_constraintTop_toTopOf="@id/layout_instagram_profile_image"
+                tools:text="Nana" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/layout_instagram_profile_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:includeFontPadding="false"
+                android:text="Location, LN"
+                android:textColor="@color/colorGrey2"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/layout_instagram_profile_image"
+                app:layout_constraintStart_toEndOf="@+id/layout_instagram_profile_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fragment_instagram_options"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:rotation="90"
+                android:src="@drawable/ic_options"
+                android:tint="@color/colorGrey4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fragment_instagram_post_picture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="190dp"
+                android:src="@{post.postPicture}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_instagram_profile_image"
+                tools:src="@drawable/img_question_mock" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fragment_instagram_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp"
+                android:src="@drawable/ic_instagram_buttons"
+                app:layout_constraintStart_toStartOf="@id/fragment_instagram_post_picture"
+                app:layout_constraintTop_toBottomOf="@id/fragment_instagram_post_picture" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp"
+                android:src="@drawable/ic_instagram_bookmark"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_instagram_buttons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fragment_instagram_buttons" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_instagram_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{post.retweetCount + `,` + post.commentsCount + ` Likes`}"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@id/fragment_instagram_buttons"
+                app:layout_constraintTop_toBottomOf="@id/fragment_instagram_buttons"
+                tools:text="240,772 Likes" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment_instagram_post_user"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:htmlText="@{`&lt;b>` + post.character.fullName + `&lt;/b>  ` + post.post}"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/fragment_instagram_likes"
+                app:layout_constraintTop_toBottomOf="@id/fragment_instagram_likes"
+                tools:text="Romane ISWAP est une menace à la paix aussi bien que JAS. " />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/fragment_instagram_layout_question"
+            layout="@layout/layout_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            app:falseText="@{post.btnFalse}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:question="@{post.confirmationQuestion}"
+            app:trueText="@{post.btnTrue}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

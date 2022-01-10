@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
             android:background="@drawable/background_facebook"
-            android:elevation="16dp"
+            tools:elevation="16dp"
             android:minHeight="200dp"
             app:layout_constraintBottom_toTopOf="@+id/fragment_facebook_layout_question"
             app:layout_constraintEnd_toEndOf="parent"

@@ -2,10 +2,13 @@ package com.prebunking.game.presentation.util
 
 import android.app.Activity
 import android.graphics.Color
+import android.text.Html
 import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
+import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -71,6 +74,12 @@ fun setNetworkImage(imageView: ImageView, url: String?) {
 fun setHexStringAsTextColor(textView: TextView, hexColor: String?) {
     if (hexColor == null) return
     textView.setTextColor(Color.parseColor("#$hexColor"))
+}
+
+@BindingAdapter("android:htmlText")
+fun setHtmlText(textView: TextView, htmlText: String?) {
+    if (htmlText == null) return
+    textView.text = HtmlCompat.fromHtml(htmlText, FROM_HTML_MODE_COMPACT)
 }
 
 @BindingAdapter("scrollable")
