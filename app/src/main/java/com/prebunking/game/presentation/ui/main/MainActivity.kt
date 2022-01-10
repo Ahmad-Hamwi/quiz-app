@@ -53,7 +53,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onBackPressed() {
         if (isDestinationBeforeSession(mainNavController!!.currentDestination!!)) {
-            onBackPressed()
+            super.onBackPressed()
         } else {
             showExitDialog()
         }
