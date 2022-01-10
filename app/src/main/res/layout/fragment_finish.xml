@@ -32,7 +32,7 @@
             android:gravity="center"
             android:text="Le Tour finit ici …\nLe Jeu avec ce personnage est terminé! "
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginVertical="32dp"
+            android:layout_marginVertical="12dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/fragment_finish_continue_message"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
                     android:paddingVertical="16dp"
                     android:text="@{character.fullName}"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="18dp"
                     android:textStyle="bold"
                     tools:text="Zongo" />
 
@@ -92,7 +92,7 @@
                     android:paddingVertical="16dp"
                     android:text="Badges gagnés:"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <com.prebunking.game.presentation.view.BadgesList
@@ -126,7 +126,7 @@
             layout="@layout/layout_button_continue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
+            android:layout_margin="12dp"
             app:buttonText="@{`Suivant`}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -36,11 +36,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getMainNavHostFragmentId(): Int = R.id.main_nav_host_fragment
 
     override fun observeNavigation() {
-//        mainNavController?.addOnDestinationChangedListener { controller, destination, arguments ->
-//            if (isDestinationBeforeSession(destination)) {
-//                viewModel.sessionCreated.value = null
-//            }
-//        }
+
     }
 
     private fun isDestinationBeforeSession(destination: NavDestination): Boolean =
@@ -49,8 +45,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 destination.id == R.id.characterDetailsFragment ||
                 destination.id == R.id.characterConfirmationFragment
 
+    private fun isInSession(destination: NavDestination): Boolean =
+        destination.id == R.id.formProgressFragment || destination.id == R.id.finishFragment
+
     override fun onBackPressed() {
-        if (mainNavController?.currentDestination?.id == R.id.thankYouFragment) {
+        if (mainNavController?.currentDestination?.id == R.id.thankYouFragment || isInSession(mainNavController?.currentDestination!!)) {
             finish()
         } else {
             super.onBackPressed()

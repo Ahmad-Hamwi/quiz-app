@@ -15,12 +15,14 @@
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
         android:background="@drawable/background"
+        android:fitsSystemWindows="true"
+        app:setDecorFitSystemWindow="@{true}"
         tools:context=".presentation.ui.main.MainActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:paddingBottom="48dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="48dp">
 
             <include
                 android:id="@+id/layout_toolbar"

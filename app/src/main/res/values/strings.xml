@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Pre Bunking Game</string>
     <string name="suivant">Suivant</string>
+    <string name="likes">Likes</string>
+    <string name="like">Like</string>
+    <string name="comments">Comments</string>
+    <string name="shares">Shares</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
 </resources>

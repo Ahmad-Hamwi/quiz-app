@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/fragment_form_progress_pager"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="4dp"
             android:clipChildren="false"
             android:clipToPadding="false"
             app:layout_constraintBottom_toTopOf="@id/fragment_form_progress_layout_progress"

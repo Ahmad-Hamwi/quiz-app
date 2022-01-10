@@ -14,288 +14,307 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:background="@drawable/background_facebook"
-            tools:elevation="16dp"
-            android:minHeight="200dp"
-            app:layout_constraintBottom_toTopOf="@+id/fragment_facebook_layout_question"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@id/fragment_facebook_layout_question"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/layout_facebook_profile_image"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="16dp"
-                android:src="@{post.character.imgProfile}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/layout_facebook_profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:includeFontPadding="false"
-                android:text="@{post.character.fullName}"
-                android:textColor="@color/colorBlue"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/layout_facebook_profile_image"
-                app:layout_constraintTop_toTopOf="@id/layout_facebook_profile_image"
-                tools:text="Nana" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/layout_facebook_profile_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:includeFontPadding="false"
-                android:text="Yesterday at 7:14 AM"
-                android:textColor="@color/colorGrey2"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="@id/layout_facebook_profile_image"
-                app:layout_constraintStart_toEndOf="@+id/layout_facebook_profile_image" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/ic_facebook_global"
-                app:layout_constraintBottom_toBottomOf="@id/layout_facebook_profile_id"
-                app:layout_constraintStart_toEndOf="@id/layout_facebook_profile_id"
-                app:layout_constraintTop_toTopOf="@id/layout_facebook_profile_id" />
-
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/fragment_facebook_options"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
-                android:src="@drawable/ic_options"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/fragment_facebook_post"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="@{post.post}"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/fragment_facebook_options"
-                app:layout_constraintStart_toStartOf="@+id/layout_facebook_profile_image"
-                app:layout_constraintTop_toBottomOf="@id/layout_facebook_profile_image"
-                tools:text="« Pour éradiquer l’extrémisme violent, l’État doit agir sur ces trois points : de l’emploi bien rémunéré pour tous, éradiquer la pauvreté, et inscrire tous les enfants à l’école. »" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/fragment_facebook_post_picture"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:minHeight="170dp"
-                android:scaleType="centerCrop"
-                android:src="@{post.postPicture}"
-                app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@id/fragment_facebook_post"
-                app:layout_constraintTop_toBottomOf="@id/fragment_facebook_post"
-                tools:src="@drawable/img_question_mock" />
-
-            <View
-                android:id="@+id/fragment_facebook_divider_1"
-                android:layout_width="0dp"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="6dp"
-                android:background="@color/colorGrey4"
-                app:layout_constraintEnd_toEndOf="@+id/fragment_facebook_post"
-                app:layout_constraintStart_toStartOf="@+id/fragment_facebook_post"
-                app:layout_constraintTop_toBottomOf="@id/fragment_facebook_post_picture" />
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/fragment_facebook_stats"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@id/fragment_facebook_divider_1"
-                app:layout_constraintStart_toStartOf="@id/fragment_facebook_divider_1"
-                app:layout_constraintTop_toBottomOf="@id/fragment_facebook_divider_1">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start|center_vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/ic_facebook_reaction_like" />
-
-                    <Space
-                        android:layout_width="1dp"
-                        android:layout_height="wrap_content" />
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/ic_facebook_reaction_love" />
-
-                    <Space
-                        android:layout_width="1dp"
-                        android:layout_height="wrap_content" />
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/ic_facebook_reaction_laugh" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:text="@{post.likesCount + `k`}"
-                        android:textColor="@color/colorGrey5"
-                        tools:text="366" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingHorizontal="8dp"
-                        android:text="@{post.commentsCount + ` Comments`}"
-                        android:textSize="11sp"
-                        tools:text="323 Comments" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:paddingHorizontal="12dp"
-                        android:text="@{post.retweetCount+ ` Shares`}"
-                        android:textSize="11sp"
-                        tools:text="323 Shares" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <View
-                android:id="@+id/fragment_facebook_divider_2"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorGrey4"
-                app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@id/fragment_facebook_post"
-                app:layout_constraintTop_toBottomOf="@id/fragment_facebook_stats" />
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/fragment_facebook_buttons"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingVertical="12dp"
-                app:layout_constraintEnd_toEndOf="@+id/fragment_facebook_post"
-                app:layout_constraintStart_toStartOf="@+id/fragment_facebook_post"
-                app:layout_constraintTop_toBottomOf="@id/fragment_facebook_divider_2">
+                android:orientation="vertical">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/background_facebook"
+                    app:layout_constraintBottom_toTopOf="@+id/fragment_facebook_layout_question"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:elevation="16dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/layout_facebook_profile_image"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_margin="16dp"
+                        android:src="@{post.character.imgProfile}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/layout_facebook_profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:includeFontPadding="false"
+                        android:text="@{post.character.fullName}"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/layout_facebook_profile_image"
+                        app:layout_constraintTop_toTopOf="@id/layout_facebook_profile_image"
+                        tools:text="Nana" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/layout_facebook_profile_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:includeFontPadding="false"
+                        android:text="Yesterday at 7:14 AM"
+                        android:textColor="@color/colorGrey2"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_facebook_profile_image"
+                        app:layout_constraintStart_toEndOf="@+id/layout_facebook_profile_image" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_facebook_global"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_facebook_profile_id"
+                        app:layout_constraintStart_toEndOf="@id/layout_facebook_profile_id"
+                        app:layout_constraintTop_toTopOf="@id/layout_facebook_profile_id" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fragment_facebook_options"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_options"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/fragment_facebook_post"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{post.post}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/fragment_facebook_options"
+                        app:layout_constraintStart_toStartOf="@+id/layout_facebook_profile_image"
+                        app:layout_constraintTop_toBottomOf="@id/layout_facebook_profile_image"
+                        tools:text="« Pour éradiquer l’extrémisme violent, l’État doit agir sur ces trois points : de l’emploi bien rémunéré pour tous, éradiquer la pauvreté, et inscrire tous les enfants à l’école. »" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fragment_facebook_post_picture"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@{post.postPicture}"
+                        app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/fragment_facebook_post"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_facebook_post"
+                        tools:src="@drawable/img_question_mock" />
+
+                    <View
+                        android:id="@+id/fragment_facebook_divider_1"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@color/colorGrey4"
+                        app:layout_constraintEnd_toEndOf="@+id/fragment_facebook_post"
+                        app:layout_constraintStart_toStartOf="@+id/fragment_facebook_post"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_facebook_post_picture" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
+                        android:id="@+id/fragment_facebook_stats"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="start|center_vertical"
-                        android:orientation="horizontal">
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@id/fragment_facebook_divider_1"
+                        app:layout_constraintStart_toStartOf="@id/fragment_facebook_divider_1"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_facebook_divider_1">
 
-                        <androidx.appcompat.widget.AppCompatImageView
+                        <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_facebook_like" />
+                            android:layout_weight="0"
+                            android:gravity="start|center_vertical">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_facebook_reaction_like" />
+
+                            <Space
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_facebook_reaction_love" />
+
+                            <Space
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_facebook_reaction_laugh" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="@{post.likesCount + `k`}"
+                                android:textColor="@color/colorGrey5"
+                                tools:text="366" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="Likes"
-                            android:textSize="13sp" />
+                            android:layout_gravity="center"
+                            android:layout_weight="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:paddingHorizontal="8dp"
+                                android:text="@{post.commentsCount + @string/comments}"
+                                android:textSize="11sp"
+                                tools:text="323 Comments" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:paddingHorizontal="12dp"
+                                android:text="@{post.retweetCount+ @string/shares}"
+                                android:textSize="11sp"
+                                tools:text="323 Shares" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <Space
-                        android:layout_width="24dp"
-                        android:layout_height="0dp" />
+                    <View
+                        android:id="@+id/fragment_facebook_divider_2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/colorGrey4"
+                        app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/fragment_facebook_post"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_facebook_stats" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
+                        android:id="@+id/fragment_facebook_buttons"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        app:layout_constraintEnd_toEndOf="@+id/fragment_facebook_post"
+                        app:layout_constraintStart_toStartOf="@+id/fragment_facebook_post"
+                        app:layout_constraintTop_toBottomOf="@id/fragment_facebook_divider_2">
 
-                        <androidx.appcompat.widget.AppCompatImageView
+                        <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingTop="3dp"
-                            android:src="@drawable/ic_facebook_comment" />
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="Comment"
-                            android:textSize="13sp" />
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_facebook_like" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="@string/like"
+                                    android:textSize="13sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <Space
+                                android:layout_width="24dp"
+                                android:layout_height="0dp" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="3dp"
+                                    android:src="@drawable/ic_facebook_comment" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="@string/comment"
+                                    android:textSize="13sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <Space
+                                android:layout_width="24dp"
+                                android:layout_height="0dp" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end|center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_facebook_share" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="@string/share"
+                                    android:textSize="13sp"
+                                    tools:text="Share" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <Space
-                        android:layout_width="24dp"
-                        android:layout_height="0dp" />
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="end|center_vertical"
-                        android:orientation="horizontal">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_facebook_share" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="Shares"
-                            android:textSize="13sp"
-                            tools:text="232k" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
         <include
             android:id="@+id/fragment_facebook_layout_question"
@@ -303,7 +322,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp"
             app:falseText="@{post.btnFalse}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

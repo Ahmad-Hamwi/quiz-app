@@ -14,117 +14,138 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:elevation="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/fragment_whatsapp_layout_question"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5">
+            app:layout_constraintBottom_toTopOf="@id/fragment_whatsapp_layout_question"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/fragment_whatsapp_background"
-                android:layout_width="0dp"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/background_whatsapp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/layout_whatsapp_profile_image"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="48dp"
-                android:background="@drawable/background_rounded_corners_solid"
-                android:layout_marginTop="76dp"
-                android:src="@{post.character.imgProfile}"
-                app:layout_constraintStart_toStartOf="@+id/fragment_whatsapp_background"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/layout_whatsapp_profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginTop="2dp"
-                android:includeFontPadding="false"
-                android:text="@{post.character.fullName}"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@id/layout_whatsapp_profile_image"
-                app:layout_constraintTop_toTopOf="@id/layout_whatsapp_profile_image"
-                tools:text="Nana" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/layout_whatsapp_profile_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:includeFontPadding="false"
-                android:text="Online"
-                android:textColor="@color/white"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="@id/layout_whatsapp_profile_image"
-                app:layout_constraintStart_toEndOf="@+id/layout_whatsapp_profile_image"
-                app:layout_constraintTop_toBottomOf="@+id/layout_whatsapp_profile_name"
-                tools:ignore="SmallSp" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragment_whatsapp_message"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="158dp"
-                app:layout_constraintEnd_toEndOf="@id/fragment_whatsapp_background"
-                app:layout_constraintStart_toStartOf="@id/fragment_whatsapp_background"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.84">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/fragment_whatsapp_message_header"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/background_whatsapp_message_header"
+                    android:layout_marginHorizontal="12dp"
+                    android:elevation="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/fragment_whatsapp_layout_question"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5">
 
-                <View
-                    android:id="@+id/fragment_whatsapp_message_bottom"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="8.5dp"
-                    android:layout_marginTop="-24dp"
-                    android:layout_marginEnd="1.25dp"
-                    android:background="@drawable/background_whatsapp_message_bottom"
-                    app:layout_constraintBottom_toBottomOf="@id/fragment_whatsapp_message_text"
-                    app:layout_constraintEnd_toEndOf="@id/fragment_whatsapp_message_header"
-                    app:layout_constraintStart_toStartOf="@id/fragment_whatsapp_message_header"
-                    app:layout_constraintTop_toBottomOf="@id/fragment_whatsapp_message_header" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/fragment_whatsapp_background"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/background_whatsapp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/fragment_whatsapp_message_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:background="#212E36"
-                    android:paddingVertical="8dp"
-                    android:text="Le vaccin contre la COVID-19 ne peut pas limiter la diffusion de la pandémie, car même après avoir été vacciné, on peut toujours attraper la COVID-19."
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="@id/fragment_whatsapp_message_bottom"
-                    app:layout_constraintStart_toStartOf="@id/fragment_whatsapp_message_bottom"
-                    app:layout_constraintTop_toTopOf="@id/fragment_whatsapp_message_header" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/layout_whatsapp_profile_image"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginTop="66dp"
+                        android:background="@drawable/background_rounded_corners_solid"
+                        android:src="@{post.character.imgProfile}"
+                        app:layout_constraintStart_toStartOf="@+id/fragment_whatsapp_background"
+                        app:layout_constraintTop_toTopOf="parent" />
 
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/layout_whatsapp_profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="2dp"
+                        android:includeFontPadding="false"
+                        android:text="@{post.character.fullName}"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@id/layout_whatsapp_profile_image"
+                        app:layout_constraintTop_toTopOf="@id/layout_whatsapp_profile_image"
+                        tools:text="Nana" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/layout_whatsapp_profile_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:includeFontPadding="false"
+                        android:text="Online"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_whatsapp_profile_image"
+                        app:layout_constraintStart_toEndOf="@+id/layout_whatsapp_profile_image"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_whatsapp_profile_name"
+                        tools:ignore="SmallSp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fragment_whatsapp_message"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="130dp"
+                        app:layout_constraintEnd_toEndOf="@id/fragment_whatsapp_background"
+                        app:layout_constraintStart_toStartOf="@id/fragment_whatsapp_background"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.84">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/fragment_whatsapp_message_header"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/background_whatsapp_message_header"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/fragment_whatsapp_message_bottom"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="8.5dp"
+                            android:layout_marginTop="-24dp"
+                            android:layout_marginEnd="1.25dp"
+                            android:background="@drawable/background_whatsapp_message_bottom"
+                            app:layout_constraintBottom_toBottomOf="@id/fragment_whatsapp_message_text"
+                            app:layout_constraintEnd_toEndOf="@id/fragment_whatsapp_message_header"
+                            app:layout_constraintStart_toStartOf="@id/fragment_whatsapp_message_header"
+                            app:layout_constraintTop_toBottomOf="@id/fragment_whatsapp_message_header" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/fragment_whatsapp_message_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:background="#212E36"
+                            android:paddingVertical="8dp"
+                            android:text="@{post.post}"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="@id/fragment_whatsapp_message_bottom"
+                            app:layout_constraintStart_toStartOf="@id/fragment_whatsapp_message_bottom"
+                            app:layout_constraintTop_toTopOf="@id/fragment_whatsapp_message_header"
+                            tools:text="Le vaccin contre la COVID-19 ne peut pas limiter la diffusion de la pandémie, car même après avoir été vacciné, on peut toujours attraper la COVID-19." />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
 
         <include
             android:id="@+id/fragment_whatsapp_layout_question"
@@ -132,7 +153,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp"
             app:falseText="@{post.btnFalse}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

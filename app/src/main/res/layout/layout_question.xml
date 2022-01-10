@@ -30,6 +30,7 @@
             android:text="@{question}"
             android:textColor="@color/white"
             android:textSize="18sp"
+            tools:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -40,7 +41,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="56dp"
-            android:layout_marginTop="16dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
                 android:text="@{trueText}"
                 android:textAllCaps="false"
                 android:textColor="@color/colorTrue"
-                android:textSize="22sp"
+                android:textSize="19sp"
                 tools:text="Vrai" />
 
             <Space
@@ -72,7 +72,7 @@
                 android:text="@{falseText}"
                 android:textAllCaps="false"
                 android:textColor="@color/colorFalse"
-                android:textSize="22sp"
+                android:textSize="19sp"
                 tools:text="Faux" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
