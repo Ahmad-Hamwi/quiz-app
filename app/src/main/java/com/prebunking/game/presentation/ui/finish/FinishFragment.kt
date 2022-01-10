@@ -49,16 +49,8 @@ class FinishFragment : BaseFragment<FragmentFinishBinding>() {
 
     override fun bindLayoutBindings(binding: FragmentFinishBinding) {
         binding.fragmentFinishLayoutButtonContinue.root.setOnClickListener {
-            FinishDialog { retry ->
-                if (retry) retry()
-                else navigateToThankYou()
-            }.show(childFragmentManager, "")
+            navigateToThankYou()
         }
-    }
-
-    private fun retry() {
-        requireActivity().finish()
-        startActivity(Intent(activity, MainActivity::class.java))
     }
 
     private fun navigateToThankYou() {

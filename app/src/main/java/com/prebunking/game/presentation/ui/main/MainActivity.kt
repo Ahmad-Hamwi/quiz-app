@@ -8,6 +8,7 @@ import android.view.WindowManager
 
 import androidx.activity.viewModels
 import androidx.navigation.NavDestination
+import com.prebunking.game.presentation.ui.finish.FinishDialog
 
 
 @AndroidEntryPoint
@@ -46,13 +47,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 destination.id == R.id.characterConfirmationFragment
 
     private fun isInSession(destination: NavDestination): Boolean =
-        destination.id == R.id.formProgressFragment || destination.id == R.id.finishFragment
+        destination.id == R.id.formProgressFragment
+                || destination.id == R.id.finishFragment
+                || destination.id == R.id.thankYouFragment
 
     override fun onBackPressed() {
-        if (mainNavController?.currentDestination?.id == R.id.thankYouFragment || isInSession(mainNavController?.currentDestination!!)) {
-            finish()
+        if (isDestinationBeforeSession(mainNavController!!.currentDestination!!)) {
+            onBackPressed()
         } else {
-            super.onBackPressed()
+            showExitDialog()
         }
+    }
+
+    private fun showExitDialog() {
+        FinishDialog { continuePlaying ->
+            if (!continuePlaying) finish()
+        }.show(supportFragmentManager, "")
     }
 }
