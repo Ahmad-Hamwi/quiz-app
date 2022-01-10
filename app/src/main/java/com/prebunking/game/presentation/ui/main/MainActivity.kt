@@ -36,11 +36,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getMainNavHostFragmentId(): Int = R.id.main_nav_host_fragment
 
     override fun observeNavigation() {
-        mainNavController?.addOnDestinationChangedListener { controller, destination, arguments ->
-            if (isDestinationBeforeSession(destination)) {
-                viewModel.sessionCreated.value = null
-            }
-        }
+//        mainNavController?.addOnDestinationChangedListener { controller, destination, arguments ->
+//            if (isDestinationBeforeSession(destination)) {
+//                viewModel.sessionCreated.value = null
+//            }
+//        }
     }
 
     private fun isDestinationBeforeSession(destination: NavDestination): Boolean =

@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/drawable/toolbar_background.xml" value="0.19907407407407407" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/badges_list.xml" value="0.2324074074074074" />
         <entry key="app/src/main/res/layout/dialog_correct_answer.xml" value="0.33" />
         <entry key="app/src/main/res/layout/dialog_finish.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/dialog_wrong_answer.xml" value="0.10163015343087815" />
@@ -29,7 +30,7 @@
         <entry key="app/src/main/res/layout/fragment_choice.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_correct_answer.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_facebook.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/fragment_finish.xml" value="0.22242359370680445" />
+        <entry key="app/src/main/res/layout/fragment_finish.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_form_progress.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_instagram.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_post.xml" value="0.3098958333333333" />
@@ -37,7 +38,9 @@
         <entry key="app/src/main/res/layout/fragment_twitter.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_whatsapp.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_badge.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/item_zig_zag.xml" value="0.1796875" />
         <entry key="app/src/main/res/layout/layout_button_continue.xml" value="0.375" />
         <entry key="app/src/main/res/layout/layout_continue_button.xml" value="0.2824074074074074" />
         <entry key="app/src/main/res/layout/layout_loading.xml" value="0.30512820512820515" />

@@ -9,6 +9,8 @@ import com.prebunking.game.domain.interactor.screen.GetScreens
 import com.prebunking.game.domain.interactor.session.CreateSession
 import com.prebunking.game.domain.interactor.session.PostSession
 import com.prebunking.game.presentation.model.CharacterUI
+import com.prebunking.game.presentation.model.SessionUI
+import com.prebunking.game.presentation.util.add
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -30,10 +32,10 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    public val mainLoading: MutableLiveData<Boolean> = MutableLiveData()
+    val mainLoading: MutableLiveData<Boolean> = MutableLiveData()
 
-    public val screens: MutableLiveData<List<ScreenEntity>> = MutableLiveData()
-    public val screensLoading: MutableLiveData<Boolean> = MutableLiveData()
+    val screens: MutableLiveData<List<ScreenEntity>> = MutableLiveData()
+    val screensLoading: MutableLiveData<Boolean> = MutableLiveData()
 
     init {
         viewModelScope.launch {
@@ -45,7 +47,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    public val characters: MutableLiveData<List<CharacterUI>> = MutableLiveData()
+    val characters: MutableLiveData<List<CharacterUI>> = MutableLiveData()
 
     init {
         viewModelScope.launch {
@@ -56,19 +58,25 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    public val sessionCreated: MutableLiveData<SessionEntity> = MutableLiveData()
+    val sessionCreated: MutableLiveData<SessionUI> = MutableLiveData()
 
-    public fun createSession(characterId: Int) {
+    fun createSession(characterId: Int) {
         viewModelScope.launch {
             sessionCreated.value = createSession.execute(characterId)
                 .onStart { mainLoading.value = true }
                 .catch { it.printStackTrace() }
+                .map { SessionUI.fromDomain(it) }
                 .single()
             mainLoading.value = false
         }
     }
 
-    public fun postToSession(postId: String, isCorrect: Boolean) {
+    fun postToSession(postId: String, isCorrect: Boolean) {
+        if (isCorrect) {
+            val badge = sessionCreated.value!!.posts.first { it.id == postId }.badge
+            sessionCreated.value!!.obtainedBadges.add(badge)
+        }
+
         viewModelScope.launch {
             try {
                 postToSession.execute(PostSession.PostSessionParams(postId, isCorrect))

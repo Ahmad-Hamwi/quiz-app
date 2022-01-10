@@ -1,5 +1,6 @@
 package com.prebunking.game.presentation.ui.thankyou
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.prebunking.game.domain.entity.ScreenEntity
 import com.prebunking.game.presentation.ui.base.BaseFragment
 import com.prebunking.game.presentation.ui.characters.details.CharacterDetailsFragmentArgs
 import com.prebunking.game.presentation.ui.finish.FinishFragmentDirections
+import com.prebunking.game.presentation.ui.main.MainActivity
 import com.prebunking.game.presentation.ui.main.MainViewModel
 
 class ThankYouFragment : BaseFragment<FragmentThankYouBinding>() {
@@ -47,6 +49,7 @@ class ThankYouFragment : BaseFragment<FragmentThankYouBinding>() {
     }
 
     private fun retry() {
-        navController.navigate(ThankYouFragmentDirections.actionThankYouFragmentToWelcomeFragment())
+        requireActivity().finish()
+        startActivity(Intent(activity, MainActivity::class.java))
     }
 }

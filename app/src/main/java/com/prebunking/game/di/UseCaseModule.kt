@@ -13,33 +13,27 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 class UseCaseModule {
     @Provides
-    @Singleton
     fun provideGetScreensUseCase(screensRepository: IScreenRepository): GetScreens =
         GetScreens(screensRepository)
 
     @Provides
-    @Singleton
     fun provideGetCharactersUseCase(charactersRepository: ICharacterRepository): GetCharacters =
         GetCharacters(charactersRepository)
 
     @Provides
-    @Singleton
     fun provideCreateGuestUseCase(guestRepository: IGuestRepository): CreateGuest =
         CreateGuest(guestRepository)
 
     @Provides
-    @Singleton
     fun providePostSessionUseCase(sessionRepository: ISessionRepository): PostSession =
         PostSession(sessionRepository)
 
     @Provides
-    @Singleton
     fun provideCreateSessionUseCase(
         guestRepository: IGuestRepository,
         sessionRepository: ISessionRepository

@@ -1,6 +1,7 @@
 package com.prebunking.game.presentation.util
 
 import android.widget.ImageView
+import androidx.lifecycle.MutableLiveData
 import coil.ImageLoader
 import coil.decode.SvgDecoder
 import coil.request.ImageRequest
@@ -26,4 +27,10 @@ fun ImageView.loadUrl(url: String?) {
         .build()
 
     imageLoader.enqueue(request)
+}
+
+fun <T> MutableLiveData<MutableList<T>>.add(item: T) {
+    val updatedItems = this.value
+    updatedItems!!.add(item)
+    this.value = updatedItems
 }

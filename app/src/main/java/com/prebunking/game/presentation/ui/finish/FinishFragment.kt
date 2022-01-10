@@ -1,5 +1,6 @@
 package com.prebunking.game.presentation.ui.finish
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.prebunking.game.databinding.FragmentFinishBinding
 import com.prebunking.game.domain.entity.ScreenEntity
 import com.prebunking.game.presentation.ui.base.BaseFragment
 import com.prebunking.game.presentation.ui.characters.details.CharacterDetailsFragmentArgs
+import com.prebunking.game.presentation.ui.main.MainActivity
 import com.prebunking.game.presentation.ui.main.MainViewModel
 
 class FinishFragment : BaseFragment<FragmentFinishBinding>() {
@@ -38,6 +40,11 @@ class FinishFragment : BaseFragment<FragmentFinishBinding>() {
         mainViewModel.screens.observe(viewLifecycleOwner) { screens ->
             binding.screen = screens.first { it.id == ScreenEntity.FINISH_SCREEN }
         }
+        mainViewModel.sessionCreated.observe(viewLifecycleOwner) { session ->
+            session.obtainedBadges.observe(viewLifecycleOwner) { obtainedBadges ->
+                binding.fragmentFinishBadgesList.withBadges(obtainedBadges)
+            }
+        }
     }
 
     override fun bindLayoutBindings(binding: FragmentFinishBinding) {
@@ -50,11 +57,13 @@ class FinishFragment : BaseFragment<FragmentFinishBinding>() {
     }
 
     private fun retry() {
-        navController.navigate(FinishFragmentDirections.actionFinishFragmentToWelcomeFragment())
+        requireActivity().finish()
+        startActivity(Intent(activity, MainActivity::class.java))
     }
 
     private fun navigateToThankYou() {
-        navController.navigate(FinishFragmentDirections.actionFinishFragmentToThankYouFragment()
+        navController.navigate(
+            FinishFragmentDirections.actionFinishFragmentToThankYouFragment()
         )
     }
 }
