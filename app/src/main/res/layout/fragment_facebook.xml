@@ -100,6 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:minHeight="170dp"
                 android:scaleType="centerCrop"
                 android:src="@{post.postPicture}"
                 app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
@@ -221,6 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -230,8 +232,8 @@
                         android:orientation="horizontal">
 
                         <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="17dp"
-                            android:layout_height="15dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:src="@drawable/ic_facebook_like" />
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -255,6 +257,7 @@
                         <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingTop="3dp"
                             android:src="@drawable/ic_facebook_comment" />
 
                         <androidx.appcompat.widget.AppCompatTextView
