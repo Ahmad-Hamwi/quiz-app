@@ -24,7 +24,7 @@
             android:id="@+id/item_character_img"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@{character.imgProfile}"
+            app:loadGlide="@{character.imgProfile}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

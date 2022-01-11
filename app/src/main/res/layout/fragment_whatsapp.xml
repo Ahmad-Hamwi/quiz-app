@@ -59,7 +59,7 @@
                         android:layout_marginStart="48dp"
                         android:layout_marginTop="@dimen/_58sdp"
                         android:background="@drawable/background_rounded_corners_solid"
-                        android:src="@{post.character.imgProfile}"
+                        app:loadGlide="@{post.character.imgProfile}"
                         app:layout_constraintStart_toStartOf="@+id/fragment_whatsapp_background"
                         app:layout_constraintTop_toTopOf="parent" />
 

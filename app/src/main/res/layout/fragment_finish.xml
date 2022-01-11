@@ -72,7 +72,7 @@
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:paddingHorizontal="32dp"
-                    android:src="@{character.imgFull}"
+                    app:loadGlide="@{character.imgFull}"
                     tools:src="@drawable/ic_character_full" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>

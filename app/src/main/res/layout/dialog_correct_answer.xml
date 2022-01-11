@@ -98,7 +98,7 @@
                     android:background="@drawable/background_rounded_corners_solid"
                     android:elevation="24dp"
                     android:padding="24dp"
-                    android:src="@{post.badge.icon}"
+                    app:loadGlide="@{post.badge.icon}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/dialog_correct_answer_badge_earned"

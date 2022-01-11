@@ -4,16 +4,16 @@ import com.prebunking.game.data.model.DomainSerializable
 import com.prebunking.game.domain.entity.CharacterEntity
 
 class CharacterApiModel(
-    private val id: Int?,
-    private val code: String?,
-    private val username: String?,
-    private val fullName: String?,
-    private val colorHEX: String?,
-    private val profession: String?,
-    private val bio: String?,
-    private val characterPicture: String?,
-    private val profilePicture: String?,
-    private val finalText: String?,
+    val id: Int?,
+    val code: String?,
+    val username: String?,
+    val fullName: String?,
+    val colorHEX: String?,
+    val profession: String?,
+    val bio: String?,
+    val characterPicture: String?,
+    val profilePicture: String?,
+    val finalText: String?,
 ) : DomainSerializable<CharacterEntity> {
 
     override fun toDomain(): CharacterEntity = CharacterEntity(

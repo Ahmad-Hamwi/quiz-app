@@ -3,6 +3,7 @@ package com.prebunking.game.di
 import android.content.Context
 import android.content.SharedPreferences
 import com.prebunking.game.data.api.constants.BASE_URL
+import com.prebunking.game.data.datasource.cache.GlideCacheDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,4 +26,8 @@ class UtilModule {
     fun provideSharedPreferences(
         @ApplicationContext context: Context
     ): SharedPreferences = context.getSharedPreferences("app_cache", Context.MODE_PRIVATE)
+
+    @Provides
+    fun provideGlideCacheDataSource(@ApplicationContext context: Context): GlideCacheDataSource =
+        GlideCacheDataSource(context)
 }

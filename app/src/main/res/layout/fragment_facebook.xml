@@ -46,7 +46,7 @@
                         android:layout_width="36dp"
                         android:layout_height="36dp"
                         android:layout_margin="16dp"
-                        android:src="@{post.character.imgProfile}"
+                        app:loadGlide="@{post.character.imgProfile}"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:scaleType="centerCrop"
-                        android:src="@{post.postPicture}"
+                        app:loadGlide="@{post.postPicture}"
                         app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@id/fragment_facebook_post"

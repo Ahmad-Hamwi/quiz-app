@@ -37,7 +37,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@{character.imgFull}"
+            app:loadGlide="@{character.imgFull}"
             app:layout_constraintBottom_toTopOf="@+id/fragment_character_confirmation_continue_message"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.5"

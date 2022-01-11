@@ -19,7 +19,7 @@
             android:layout_height="50dp"
             android:background="@drawable/background_rounded_corners_solid"
             android:padding="8dp"
-            android:src="@{src}"
+            app:loadGlide="@{src}"
             tools:src="@drawable/ic_badge" />
     </FrameLayout>
 </layout>

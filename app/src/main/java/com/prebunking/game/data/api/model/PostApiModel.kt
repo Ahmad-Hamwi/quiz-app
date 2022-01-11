@@ -6,22 +6,22 @@ import com.prebunking.game.domain.entity.PostTypeEntity
 
 
 class PostApiModel(
-    private val id: String,
-    private val characterId: Int,
-    private val post: String,
-    private val postPicture: String?,
-    private val confirmationQuestion: String,
-    private val btnTrue: String,
-    private val btnFalse: String,
-    private val isTrue: Boolean,
-    private val correctAnswerText: String,
-    private val wrongAnswerText: String,
-    private val character: CharacterApiModel,
-    private val badge: BadgeApiModel,
-    private val commentsCount: Int,
-    private val retweetCount: Int,
-    private val likesCount: String,
-    private val type: String
+    val id: String,
+    val characterId: Int,
+    val post: String,
+    val postPicture: String?,
+    val confirmationQuestion: String,
+    val btnTrue: String,
+    val btnFalse: String,
+    val isTrue: Boolean,
+    val correctAnswerText: String,
+    val wrongAnswerText: String,
+    val character: CharacterApiModel,
+    val badge: BadgeApiModel,
+    val commentsCount: Int,
+    val retweetCount: Int,
+    val likesCount: String,
+    val type: String
 ) : DomainSerializable<PostEntity> {
     override fun toDomain(): PostEntity = PostEntity(
         id,

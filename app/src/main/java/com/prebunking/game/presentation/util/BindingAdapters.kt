@@ -2,7 +2,6 @@ package com.prebunking.game.presentation.util
 
 import android.app.Activity
 import android.graphics.Color
-import android.text.Html
 import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.ImageView
@@ -14,8 +13,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.databinding.BindingAdapter
-import coil.load
-import coil.request.CachePolicy
+import com.bumptech.glide.Glide
 
 @BindingAdapter("visibility")
 fun visibility(view: View, visibility: Boolean) {
@@ -65,11 +63,6 @@ fun setDecorFitSystemWindow(view: View, apply: Boolean) {
     }
 }
 
-@BindingAdapter("android:src")
-fun setNetworkImage(imageView: ImageView, url: String?) {
-    imageView.loadUrl(url)
-}
-
 @BindingAdapter("android:textColor")
 fun setHexStringAsTextColor(textView: TextView, hexColor: String?) {
     if (hexColor == null) return
@@ -86,4 +79,13 @@ fun setHtmlText(textView: TextView, htmlText: String?) {
 fun setTextViewScrollable(textView: TextView, scrollable: Boolean) {
     if (!scrollable) return
     textView.movementMethod = ScrollingMovementMethod()
+}
+
+@BindingAdapter("loadGlide")
+fun loadGlide(imageView: ImageView, imageUrl: String?) {
+    if (imageUrl == null) return
+    Glide.with(imageView.context)
+        .load(imageUrl)
+        .fitCenter()
+        .into(imageView)
 }
