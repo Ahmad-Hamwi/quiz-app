@@ -34,28 +34,50 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Ok, c’est parti!\nVérifions l’information !" />
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:loadGlide="@{character.imgFull}"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/fragment_character_confirmation_continue_message"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fragment_character_confirmation_title"
-            app:layout_constraintWidth_percent="0.4"
-            tools:src="@drawable/ic_character_full" />
+            app:layout_constraintVertical_bias="0.2"
+            android:gravity="center"
+            tools:src="@drawable/ic_character_full">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:loadGlide="@{character.imgFull}"
+                tools:src="@drawable/ic_character_full" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@{character.fullName}"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                tools:text="Zongo" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/fragment_character_confirmation_continue_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginVertical="12dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="16dp"
+            android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:text="@{characterConfirmationScreen.buttonMessage}"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
+            android:text="@{characterConfirmationScreen.buttonMessage}"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/fragment_character_confirmation_layout_button_continue"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,10 +91,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12sp"
+            app:buttonText="@{characterConfirmationScreen.buttonText}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:buttonText="@{characterConfirmationScreen.buttonText}" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

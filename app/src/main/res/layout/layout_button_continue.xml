@@ -23,7 +23,7 @@
         android:text="@{buttonText}"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="21sp" />
+        android:textSize="16sp" />
 </layout>
 
 

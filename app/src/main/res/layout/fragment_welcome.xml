@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="welcomeScreen"
             type="com.prebunking.game.domain.entity.ScreenEntity" />
@@ -48,12 +49,12 @@
                 android:id="@+id/fragment_welcome_content"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
+                android:layout_marginHorizontal="48dp"
                 android:gravity="center"
                 android:text="@{welcomeScreen.content}"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_welcome_continue_message"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fragment_welcome_title"
@@ -63,18 +64,16 @@
                 android:id="@+id/fragment_welcome_continue_message"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="36dp"
+                android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
                 android:text="@{welcomeScreen.buttonMessage}"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@id/fragment_welcome_layout_button_continue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_content"
-                app:layout_constraintVertical_bias="1"
                 tools:text="Clique sur la « flèche » pour lancer le jeu." />
 
             <include

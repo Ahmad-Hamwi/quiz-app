@@ -17,27 +17,27 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="8dp"
-        android:paddingVertical="16dp">
+        android:layout_marginVertical="16dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/item_character_img"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            app:loadGlide="@{character.imgProfile}"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:loadGlide="@{character.imgProfile}"
             tools:src="@drawable/ic_zongo" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/item_character_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="4dp"
             android:text="@{character.fullName}"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:textSize="19sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_character_img"
@@ -49,9 +49,10 @@
             android:layout_height="wrap_content"
             android:ems="6"
             android:gravity="center"
+            android:includeFontPadding="false"
             android:text="@{character.profession}"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="15sp"
             app:existence="@{!excludeProfession}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

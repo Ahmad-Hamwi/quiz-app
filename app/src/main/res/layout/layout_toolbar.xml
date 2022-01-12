@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/background_toolbar"
         android:paddingHorizontal="25dp"
-        android:paddingTop="40dp"
-        android:paddingBottom="20dp">
+        android:paddingTop="38dp"
+        android:paddingBottom="18dp">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/toolbar_button_back"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Info Vax"
             android:textColor="@color/white"
-            android:textSize="36sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +37,8 @@
 
 
         <View
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:background="@drawable/ic_flag_france"
             android:elevation="100dp"
             app:layout_constraintBottom_toBottomOf="parent"

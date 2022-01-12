@@ -1,5 +1,6 @@
 package com.prebunking.game.presentation.ui.main
 
+import android.view.View
 import com.prebunking.game.R
 import com.prebunking.game.databinding.ActivityMainBinding
 import com.prebunking.game.presentation.ui.base.BaseActivity
@@ -37,7 +38,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getMainNavHostFragmentId(): Int = R.id.main_nav_host_fragment
 
     override fun observeNavigation() {
-
+        mainNavController?.addOnDestinationChangedListener { navController, destination, args ->
+            if (destination.id == R.id.welcomeFragment || destination.id == R.id.thankYouFragment) {
+                binding.layoutToolbar.toolbarButtonBack.visibility = View.GONE
+            } else {
+                binding.layoutToolbar.toolbarButtonBack.visibility = View.VISIBLE
+            }
+        }
     }
 
     private fun isDestinationBeforeSession(destination: NavDestination): Boolean =

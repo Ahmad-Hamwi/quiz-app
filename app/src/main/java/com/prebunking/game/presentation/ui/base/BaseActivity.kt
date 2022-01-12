@@ -12,7 +12,7 @@ import com.prebunking.game.R
 
 abstract class BaseActivity<BINDING : ViewDataBinding> : AppCompatActivity() {
 
-    private lateinit var binding: BINDING
+    protected lateinit var binding: BINDING
 
     protected var mainNavController: NavController? = null
 

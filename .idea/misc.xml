@@ -19,6 +19,7 @@
         <entry key="app/src/main/res/drawable/ic_active.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.17447916666666666" />
         <entry key="app/src/main/res/drawable/toolbar_background.xml" value="0.19907407407407407" />
+        <entry key="app/src/main/res/font/roboto.xml" value="0.2074074074074074" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/badges_list.xml" value="0.2324074074074074" />
         <entry key="app/src/main/res/layout/dialog_correct_answer.xml" value="0.33" />
