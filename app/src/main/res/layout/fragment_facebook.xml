@@ -115,7 +115,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
                         app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@id/fragment_facebook_post"
