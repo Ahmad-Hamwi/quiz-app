@@ -43,9 +43,9 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/layout_facebook_profile_image"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:layout_margin="16dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="12dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:loadGlide="@{post.character.imgProfile}" />
@@ -58,8 +58,8 @@
                         android:includeFontPadding="false"
                         android:text="@{post.character.fullName}"
                         android:textColor="@color/colorBlue"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/roboto_medium"
                         app:layout_constraintStart_toEndOf="@id/layout_facebook_profile_image"
                         app:layout_constraintTop_toTopOf="@id/layout_facebook_profile_image"
                         tools:text="Nana" />
@@ -72,13 +72,13 @@
                         android:includeFontPadding="false"
                         android:text="Yesterday at 7:14 AM"
                         android:textColor="@color/colorGrey2"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         app:layout_constraintBottom_toBottomOf="@id/layout_facebook_profile_image"
                         app:layout_constraintStart_toEndOf="@+id/layout_facebook_profile_image" />
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
                         android:layout_marginStart="8dp"
                         android:src="@drawable/ic_facebook_global"
                         app:layout_constraintBottom_toBottomOf="@id/layout_facebook_profile_id"
@@ -88,9 +88,9 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/fragment_facebook_options"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="12dp"
                         android:layout_marginEnd="12dp"
                         android:src="@drawable/ic_options"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -100,10 +100,10 @@
                         android:id="@+id/fragment_facebook_post"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="12dp"
                         android:text="@{post.post}"
                         android:textColor="@color/black"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:fontFamily="@font/roboto_medium"
                         app:layout_constraintEnd_toEndOf="@+id/fragment_facebook_options"
                         app:layout_constraintStart_toStartOf="@+id/layout_facebook_profile_image"
@@ -146,12 +146,12 @@
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="0.5"
                             android:gravity="start|center_vertical">
 
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
                                 android:src="@drawable/ic_facebook_reaction_like" />
 
                             <Space
@@ -159,8 +159,8 @@
                                 android:layout_height="wrap_content" />
 
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
                                 android:src="@drawable/ic_facebook_reaction_love" />
 
                             <Space
@@ -168,14 +168,15 @@
                                 android:layout_height="wrap_content" />
 
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
                                 android:src="@drawable/ic_facebook_reaction_laugh" />
 
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
+                                android:textSize="11sp"
                                 android:text="@{post.likesCount + `k`}"
                                 android:textColor="@color/colorGrey5"
                                 tools:text="366" />
@@ -200,7 +201,6 @@
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
                                 android:gravity="end"
                                 android:paddingHorizontal="12dp"
                                 android:text="@{post.retweetCount+ @string/shares}"
@@ -213,8 +213,8 @@
                     <View
                         android:id="@+id/fragment_facebook_divider_2"
                         android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="6dp"
                         android:background="@color/colorGrey4"
                         app:layout_constraintEnd_toEndOf="@id/fragment_facebook_post"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -254,10 +254,10 @@
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
+                                    android:layout_marginStart="4dp"
                                     android:fontFamily="@font/roboto_medium"
                                     android:text="@string/like"
-                                    android:textSize="13sp" />
+                                    android:textSize="11sp" />
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
                             <Space
@@ -279,10 +279,10 @@
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
+                                    android:layout_marginStart="4dp"
                                     android:fontFamily="@font/roboto_medium"
                                     android:text="@string/comment"
-                                    android:textSize="13sp" />
+                                    android:textSize="11sp" />
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
                             <Space
@@ -303,10 +303,10 @@
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
+                                    android:layout_marginStart="4dp"
                                     android:fontFamily="@font/roboto_medium"
                                     android:text="@string/share"
-                                    android:textSize="13sp"
+                                    android:textSize="11sp"
                                     tools:text="Share" />
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
