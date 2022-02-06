@@ -1,9 +1,6 @@
 package com.prebunking.game.di
 
-import com.prebunking.game.data.api.ICharacterApi
-import com.prebunking.game.data.api.IGuestApi
-import com.prebunking.game.data.api.IScreenApi
-import com.prebunking.game.data.api.ISessionApi
+import com.prebunking.game.data.api.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,4 +24,8 @@ class ApiModule {
     @Provides
     fun provideSessionsApi(retrofit: Retrofit): ISessionApi =
         retrofit.create(ISessionApi::class.java)
+
+    @Provides
+    fun provideGeoLocationApi(retrofit: Retrofit): IGeoLocationApi =
+        retrofit.create(IGeoLocationApi::class.java)
 }

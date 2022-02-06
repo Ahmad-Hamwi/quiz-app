@@ -9,6 +9,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -17,9 +19,22 @@ import retrofit2.converter.gson.GsonConverterFactory
 class UtilModule {
 
     @Provides
-    fun provideRetrofitClient(): Retrofit = Retrofit.Builder()
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor =
+        HttpLoggingInterceptor()
+            .apply { level = HttpLoggingInterceptor.Level.BODY }
+
+
+    @Provides
+    fun provideHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
+        OkHttpClient.Builder()
+            .apply { addInterceptor(loggingInterceptor) }
+            .build()
+
+    @Provides
+    fun provideRetrofitClient(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
+        .client(okHttpClient)
         .build()
 
     @Provides

@@ -7,3 +7,5 @@ const val SCREENS = "screens"
 const val SESSIONS = "sessions"
 const val GUESTS = "guests"
 const val SESSIONS_POST = "session-posts"
+
+const val GEO_LOCATION = "https://geolocation-db.com/json/"

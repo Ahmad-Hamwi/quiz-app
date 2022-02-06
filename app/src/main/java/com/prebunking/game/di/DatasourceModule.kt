@@ -27,6 +27,9 @@ abstract class DatasourceModule {
     abstract fun bindSessionRemoteDataSource(sessionRemoteDataSourceImpl: SessionRemoteDataSourceImpl): ISessionRemoteDataSource
 
     @Binds
+    abstract fun bindGeoLocationRemoteDataSource(geoLocationRemoteDataSourceImpl: GeoLocationRemoteDataSource): IGeoLocationRemoteDataSource
+
+    @Binds
     abstract fun bindGuestCacheDataSource(guestCacheDataSourceImpl: GuestCacheDataSourceImpl): IGuestCacheDataSource
 
     @Binds
